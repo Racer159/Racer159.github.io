@@ -39,19 +39,19 @@ app.directive('clock', ['$interval', function($interval) {
 			ctx.shadowBlur = 0;
 			gradient = ctx.createRadialGradient(200, 200, 5, 200, 200, 220);
 			gradient.addColorStop(0, '#003D4C');
-			gradient.addColorStop(1, '#000000');
+			gradient.addColorStop(1, '#FFFFFF');
 			ctx.fillStyle = gradient;
 			ctx.fillRect(0, 0, 950, 400);
 
 			gradientred = ctx.createRadialGradient(835, 165, 5, 835, 165, 55);
 			gradientred.addColorStop(0, '#4C0000');
-			gradientred.addColorStop(1, '#000000');
+			gradientred.addColorStop(1, '#FFFFFF');
 			ctx.fillStyle = gradientred;
 			ctx.fillRect(785, 115, 110, 110);
 
 			gradientyel = ctx.createRadialGradient(835, 300, 5, 835, 300, 55);
 			gradientyel.addColorStop(0, '#4C4C00');
-			gradientyel.addColorStop(1, '#000000');
+			gradientyel.addColorStop(1, '#FFFFFF');
 			ctx.fillStyle = gradientyel;
 			ctx.fillRect(785, 250, 110, 110);
 
