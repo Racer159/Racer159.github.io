@@ -1,0 +1,19 @@
+/* CLOCK */
+#clock {
+	text-align: center;
+}
+
+/* CLOCK  CONTROLS */
+#alarm {
+	position: relative;
+	top: -235px;
+	left: 148px;
+	padding: -15px 0px 0px 0px;
+}
+
+#alarmbuttons {
+	position: relative;
+	top: -220px;
+	left: 89px;
+	padding: -15px 0px 0px 0px;
+}

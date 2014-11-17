@@ -1,0 +1,49 @@
+<html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="main">
+
+<head>
+	<title>Wayne Starr (Racer159)</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<link rel="stylesheet" type="text/css" href="css/animations.css" />
+	<link rel="stylesheet" type="text/css" href="css/interface.css" />
+	
+	<script type="text/javascript" src="js/angular/angular.js"></script>
+	<script type="text/javascript" src="js/angular/angular-animate.js"></script>
+	<script type="text/javascript" src="js/angular/angular-route.js"></script>
+	<script type="text/javascript" src="js/bootstrap/ui-bootstrap-tpls-0.11.2.min.js"></script>
+	
+	<script type="text/javascript" src="js/app-controller.js"></script>
+	<script type="text/javascript" src="js/routing.js"></script>
+	<script type="text/javascript" src="js/home-controller.js"></script>
+	<script type="text/javascript" src="js/resume-controller.js"></script>
+	<script type="text/javascript" src="js/projects-controller.js"></script>
+	
+	<script type="text/javascript" src="js/clock.js"></script>
+</head>
+
+<body ng-controller="AppController">
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar-collapse">
+					<span class="sr-only">Toggle Navigation</span>
+					<span class="glyphicon glyphicon-list"></span>
+				</button>
+				<a class="navbar-brand" href="#">Wayne Starr</a>
+			</div>
+			<div class="collapse navbar-collapse" id="main-navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li ng-class="home" ng-click="gotoHome()"><a href="">Home</a></li>
+					<li ng-class="resume"><a href="" ng-click="gotoResume()">Resume</a></li>
+					<li ng-class="projects"><a href="" ng-click="gotoProjects()">Projects</a></li>
+					<li ng-class="github"><a href="" ng-click="gotoGitHub()">GitHub</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+		<div data-ng-view class="row"> </div>
+	</div>
+</body>
+
+</html>
