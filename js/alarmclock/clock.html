@@ -2,7 +2,7 @@
 	<canvas id="canvas" width="950" height="400"></canvas>
 	<div id='alarm'>
 		<label>
-			<select id="hour1" onChange="updateAlarm()" class="one">
+			<select id="hour1" ng-model="aonehour" class="one">
 				<option value="1">1</option>
 				<option value="2">2</option>
 				<option value="3">3</option>
@@ -19,7 +19,7 @@
 		</label>
 		:
 		<label>
-			<select id="minute1" onChange="updateAlarm()" class="one">
+			<select id="minute1" ng-model="aoneminute" class="one">
 				<option value="0">00</option>
 				<option value="5">05</option>
 				<option value="10">10</option>
@@ -35,7 +35,7 @@
 			</select>
 		</label>
 		<label>
-			<select id="ampm1" onChange="updateAlarm()" class="one">
+			<select id="ampm1" ng-model="aoneampm" class="one">
 				<option value="AM">AM</option>
 				<option value="PM">PM</option>
 			</select>
@@ -51,7 +51,7 @@
 		<br/>
 		<br/>
 		<label>
-			<select id="hour2" onChange="updateAlarm()"  class="two">
+			<select id="hour2" ng-model="atwohour"  class="two">
 				<option value="1">1</option>
 				<option value="2">2</option>
 				<option value="3">3</option>
@@ -68,7 +68,7 @@
 		</label>
 		:
 		<label>
-			<select id="minute2" onChange="updateAlarm()"  class="two">
+			<select id="minute2" ng-model="atwominute"  class="two">
 				<option value="0">00</option>
 				<option value="5">05</option>
 				<option value="10">10</option>
@@ -84,7 +84,7 @@
 			</select>
 		</label>
 		<label>
-			<select id="ampm2" onChange="updateAlarm()" class="two">
+			<select id="ampm2" ng-model="atwoampm" class="two">
 				<option value="AM">AM</option>
 				<option value="PM">PM</option>
 			</select>
@@ -101,8 +101,8 @@
 		<br/>
 	</div>
 	<div id="alarmbuttons">
-		<button id="snooze" onClick="snooze()" type="button" style="font-size: 18px; width: 150px; height: 50px;">SNOOZE</button>
-		<button id="off" onclick="off()" type="button" style="font-size: 18px; width: 150px; height: 50px;">ALARM OFF</button>
+		<button id="snooze" ng-click="snooze()" type="button" style="font-size: 18px; width: 150px; height: 50px;">SNOOZE</button>
+		<button id="off" ng-click="off()" type="button" style="font-size: 18px; width: 150px; height: 50px;">ALARM OFF</button>
 	</div>
 	<audio id="asound" src="audio/alarm.mp3" preload="auto" loop></audio>
 	<audio id="asound2" src="audio/alarm2.mp3" preload="auto" loop></audio>

@@ -6,18 +6,20 @@ app..directive('clock', ['$interval', function($interval) {
 		var timeoutId;
 	
 		//get the canvas object
-		var clock = document.getElementById('canvas');
+		var clock = element.getElementById('canvas');
 		var ctx = clock.getContext('2d');
 
 		//set the alarm variables
-		var aonehour = 1;
-		var aoneminute = 0;
-		var aoneampm = "AM";
+		scope.aonehour = 1;
+		scope.aoneminute = 0;
+		scope.aoneampm = "AM";
+		scope.aoneon = "OFF";
 
 		//set the alarm variables
-		var atwohour = 1;
-		var atwominute = 0;
-		var atwoampm = "AM";
+		scope.atwohour = 1;
+		scope.atwominute = 0;
+		scope.atwoampm = "AM";
+		scope.atwoon = "OFF";
 	
 		/*Draw the clock to the screen*/
 		function draw() {
@@ -131,102 +133,92 @@ app..directive('clock', ['$interval', function($interval) {
 			//check the alarm
 			//alarm one
 			if (hours>11) {
-				if (document.getElementById("onoff1").value == "ON" && aonehour == hours-12 && aoneminute == minutes && aoneampm == "PM") {
-					document.getElementById("asound").play();
+				if (scope.aoneon == "ON" && scope.aonehour == hours-12 && scope.aoneminute == minutes && scope.aoneampm == "PM") {
+					element.getElementById("asound").play();
 				}
 			} else {
-				if (document.getElementById("onoff1").value == "ON" && aonehour == hours && aoneminute == minutes && aoneampm == "AM") {
-					document.getElementById("asound").play();
+				if (scope.aoneon == "ON" && scope.aonehour == hours && scope.aoneminute == minutes && scope.aoneampm == "AM") {
+					element.getElementById("asound").play();
 				}
 			}
 
 			//alarm two
 			if (hours>11) {
-				if (document.getElementById("onoff2").value == "ON" && atwohour == hours-12 && atwominute == minutes && atwoampm == "PM") {
-					document.getElementById("asound2").play();
+				if (scope.atwoon == "ON" && scope.atwohour == hours-12 && scope.atwominute == minutes && scope.atwoampm == "PM") {
+					element.getElementById("asound2").play();
 				}
 			} else {
-				if (document.getElementById("onoff2").value == "ON" && atwohour == hours && atwominute == minutes && atwoampm == "AM") {
-					document.getElementById("asound2").play();
+				if (scope.atwoon == "ON" && scope.atwohour == hours && scope.atwominute == minutes && scope.atwoampm == "AM") {
+					element.getElementById("asound2").play();
 				}
 			}
-		}
-
-		//update alarm variables
-		function updateAlarm() {
-			aonehour = document.getElementById("hour1").value;
-			aoneminute = document.getElementById("minute1").value;
-			aoneampm = document.getElementById("ampm1").value;
-	
-			atwohour = document.getElementById("hour2").value;
-			atwominute = document.getElementById("minute2").value;
-			atwoampm = document.getElementById("ampm2").value;
 		}
 
 		//snooze
-		function snooze() {
-			alarm1 = document.getElementById("asound");
-			alarm2 = document.getElementById("asound2");
+		scope.snooze() {
+			alarm1 = element.getElementById("asound");
+			alarm2 = element.getElementById("asound2");
+			
 			if (!(alarm1.paused)) {
 				var mins = 0;
-				mins = document.getElementById("minute1").value;
+				mins = scope.aoneminute;
 				mins = parseInt(mins, 10) + 10;
 				if (mins > 60) {
 					mins = mins - 60;
-					var hrs = parseInt(document.getElementById("hour1").value);
+					var hrs = parseInt(scope.aonehour);
 					hrs = hrs + 1;
 					if (hrs > 11) {
 						hrs = hrs - 12;
-						if (document.getElementById("ampm1").value == "AM") {
-							document.getElementById("ampm1").value = "PM";
+						if (scope.aoneampm == "AM") {
+							scope.aoneampm = "PM";
 						} else {
-							document.getElementById("ampm1").value = "AM";
+							scope.aoneampm = "AM";
 						}
 					}
-					document.getElementById("hour1").value = hrs;
+					scope.aonehour = hrs;
 				}
-				document.getElementById("minute1").value = addZero(mins);
-				updateAlarm();
+				scope.aoneminute = addZero(mins);
 				alarm1.pause();
 			}
+			
 			if (!(alarm2.paused)) {
 				var mins = 0;
-				mins = document.getElementById("minute2").value;
+				mins = scope.atwominute;
 				mins = parseInt(mins, 10) + 10;
 				if (mins > 60) {
 					mins = mins - 60;
-					var hrs = parseInt(document.getElementById("hour2").value);
+					var hrs = parseInt(scope.atwohour);
 					hrs = hrs + 1;
 					if (hrs > 11) {
 						hrs = hrs - 12;
-						if (document.getElementById("ampm2").value == "AM") {
-							document.getElementById("ampm2").value = "PM";
+						if (scope.atwoampm == "AM") {
+							scope.atwoampm = "PM";
 						} else {
-							document.getElementById("ampm2").value = "AM";
+							scope.atwoampm = "AM";
 						}
 					}
-					document.getElementById("hour2").value = hrs;
+					scope.atwohour = hrs;
 				}
-				document.getElementById("minute2").value = addZero(mins);
-				updateAlarm();
+				scope.atwominute = addZero(mins);
 				alarm2.pause();
 			}
 		}
 
 		//alarm off
-		function off() {
-			alarm1 = document.getElementById("asound");
-			alarm2 = document.getElementById("asound2");
+		scope.off() {
+			alarm1 = element.getElementById("asound");
+			alarm2 = element.getElementById("asound2");
 			if (!(alarm1.paused)) {
-				document.getElementById("onoff1").value = "OFF";
+				scope.aoneon = "OFF";
 				alarm1.pause();
 			}
 			if (!(alarm2.paused)) {
-				document.getElementById("onoff2").value = "OFF";
+				scope.atwoon = "OFF";
 				alarm2.pause();
 			}
 		}
 
+		//helper to zero pad a string
 		function addZero(i) {
 			var s = "";
 			if (i<10) {
@@ -248,7 +240,7 @@ app..directive('clock', ['$interval', function($interval) {
 	}
 
 	return {
-		link: link
+		link: link,
 		templateUrl: 'clock.html'
 	};
 }]);
