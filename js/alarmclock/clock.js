@@ -81,28 +81,28 @@ app.directive('clock', ['$interval', function($interval) {
 			ctx.strokeStyle = '#FF0000';
 			ctx.shadowColor = '#FF0000';
 			ctx.beginPath();
-			if (aoneampm == "AM") {
-				ctx.arc(840, 170, 50, -0.5*Math.PI, (aonehour*Math.PI)/12-0.5*Math.PI);
+			if (scope.aoneampm == "AM") {
+				ctx.arc(840, 170, 50, -0.5*Math.PI, (scope.aonehour*Math.PI)/12-0.5*Math.PI);
 			} else {
-				ctx.arc(840, 170, 50, -0.5*Math.PI, ((aonehour-12)*Math.PI)/12-0.5*Math.PI);
+				ctx.arc(840, 170, 50, -0.5*Math.PI, ((scope.aonehour-12)*Math.PI)/12-0.5*Math.PI);
 			}
 			ctx.stroke();
 			ctx.beginPath();
-			ctx.arc(840, 170, 30, -0.5*Math.PI, (aoneminute*Math.PI)/30-0.5*Math.PI);
+			ctx.arc(840, 170, 30, -0.5*Math.PI, (scope.aoneminute*Math.PI)/30-0.5*Math.PI);
 			ctx.stroke();
 	
 			//alarm2
 			ctx.strokeStyle = '#FFCC00';
 			ctx.shadowColor = '#FFCC00';
 			ctx.beginPath();
-			if (atwoampm == "AM") {
-				ctx.arc(840, 305, 50, -0.5*Math.PI, (atwohour*Math.PI)/12-0.5*Math.PI);
+			if (scope.atwoampm == "AM") {
+				ctx.arc(840, 305, 50, -0.5*Math.PI, (scope.atwohour*Math.PI)/12-0.5*Math.PI);
 			} else {
-				ctx.arc(840, 305, 50, -0.5*Math.PI, ((atwohour-12)*Math.PI)/12-0.5*Math.PI);
+				ctx.arc(840, 305, 50, -0.5*Math.PI, ((scope.atwohour-12)*Math.PI)/12-0.5*Math.PI);
 			}
 			ctx.stroke();
 			ctx.beginPath();
-			ctx.arc(840, 305, 30, -0.5*Math.PI, (atwominute*Math.PI)/30-0.5*Math.PI);
+			ctx.arc(840, 305, 30, -0.5*Math.PI, (scope.atwominute*Math.PI)/30-0.5*Math.PI);
 			ctx.stroke();
 
 			//draw the text
