@@ -121,14 +121,14 @@ app.directive('clock', ['$interval', function($interval) {
 			ctx.font = "25px Segoe UI";
 			ctx.fillStyle = '#121212';
 			ctx.fillText("ALARM", 410, 190);
-			ctx.fillText("ALARM", 410, 253);
+			ctx.fillText("ALARM", 410, 260);
 
 			ctx.font = "25px Segoe UI";
 			ctx.fillStyle = '#FF0000';
 			ctx.fillText("1", 495, 190);
 
 			ctx.fillStyle = '#FFCC00';
-			ctx.fillText("2", 495, 253);
+			ctx.fillText("2", 495, 260);
 
 			//check the alarm
 			//alarm one
