@@ -240,6 +240,7 @@ app.directive('clock', ['$interval', function($interval) {
 	}
 
 	return {
+		restrict: 'AEC',
 		link: link,
 		templateUrl: 'clock.html'
 	};
