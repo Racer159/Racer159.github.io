@@ -38,19 +38,19 @@ app.directive('clock', ['$interval', function($interval) {
 			//background and style
 			ctx.shadowBlur = 0;
 			gradient = ctx.createRadialGradient(200, 200, 5, 200, 200, 220);
-			gradient.addColorStop(0, '#003D4C');
+			gradient.addColorStop(0, '#DDEEFF');
 			gradient.addColorStop(1, '#FFFFFF');
 			ctx.fillStyle = gradient;
 			ctx.fillRect(0, 0, 950, 400);
 
 			gradientred = ctx.createRadialGradient(835, 165, 5, 835, 165, 55);
-			gradientred.addColorStop(0, '#4C0000');
+			gradientred.addColorStop(0, '#FFCCCC');
 			gradientred.addColorStop(1, '#FFFFFF');
 			ctx.fillStyle = gradientred;
 			ctx.fillRect(785, 115, 110, 110);
 
 			gradientyel = ctx.createRadialGradient(835, 300, 5, 835, 300, 55);
-			gradientyel.addColorStop(0, '#4C4C00');
+			gradientyel.addColorStop(0, '#FFFFCC');
 			gradientyel.addColorStop(1, '#FFFFFF');
 			ctx.fillStyle = gradientyel;
 			ctx.fillRect(785, 250, 110, 110);
@@ -107,28 +107,28 @@ app.directive('clock', ['$interval', function($interval) {
 
 			//draw the text
 			//date
-			ctx.shadowColor = 'DEDEDE';
-			ctx.font = "54px Trebuchet MS";
-			ctx.fillStyle = '#DEDEDE';
+			ctx.shadowColor = '#BCBCBC';
+			ctx.font = "54px Segoe UI";
+			ctx.fillStyle = '#121212';
 			ctx.fillText(today, 410, 70);
 
 			//time
-			ctx.font = "42px Trebuchet MS";
-			ctx.fillStyle = '#DEDEDE';
+			ctx.font = "42px Segoe UI";
+			ctx.fillStyle = '#121212';
 			ctx.fillText(time, 410, 120);
 
 			//alarms
-			ctx.font = "25px Trebuchet MS";
-			ctx.fillStyle = '#DEDEDE';
+			ctx.font = "25px Segoe UI";
+			ctx.fillStyle = '#121212';
 			ctx.fillText("ALARM", 410, 190);
 			ctx.fillText("ALARM", 410, 253);
 
-			ctx.font = "25px Trebuchet MS";
+			ctx.font = "25px Segoe UI";
 			ctx.fillStyle = '#FF0000';
-			ctx.fillText("1", 490, 190);
+			ctx.fillText("1", 495, 190);
 
 			ctx.fillStyle = '#FFCC00';
-			ctx.fillText("2", 490, 253);
+			ctx.fillText("2", 495, 253);
 
 			//check the alarm
 			//alarm one
