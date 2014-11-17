@@ -155,7 +155,7 @@ app.directive('clock', ['$interval', function($interval) {
 		}
 
 		//snooze
-		scope.snooze() {
+		scope.snooze = function() {
 			alarm1 = element.getElementById("asound");
 			alarm2 = element.getElementById("asound2");
 			
@@ -205,7 +205,7 @@ app.directive('clock', ['$interval', function($interval) {
 		}
 
 		//alarm off
-		scope.off() {
+		scope.off = function() {
 			alarm1 = element.getElementById("asound");
 			alarm2 = element.getElementById("asound2");
 			if (!(alarm1.paused)) {
