@@ -6,7 +6,7 @@ app.directive('clock', ['$interval', function($interval) {
 		var timeoutId;
 	
 		//get the canvas object
-		var clock = element.getElementById('canvas');
+		var clock = document.getElementById('canvas');
 		var ctx = clock.getContext('2d');
 
 		//set the alarm variables
@@ -134,30 +134,30 @@ app.directive('clock', ['$interval', function($interval) {
 			//alarm one
 			if (hours>11) {
 				if (scope.aoneon == "ON" && scope.aonehour == hours-12 && scope.aoneminute == minutes && scope.aoneampm == "PM") {
-					element.getElementById("asound").play();
+					document.getElementById("asound").play();
 				}
 			} else {
 				if (scope.aoneon == "ON" && scope.aonehour == hours && scope.aoneminute == minutes && scope.aoneampm == "AM") {
-					element.getElementById("asound").play();
+					document.getElementById("asound").play();
 				}
 			}
 
 			//alarm two
 			if (hours>11) {
 				if (scope.atwoon == "ON" && scope.atwohour == hours-12 && scope.atwominute == minutes && scope.atwoampm == "PM") {
-					element.getElementById("asound2").play();
+					document.getElementById("asound2").play();
 				}
 			} else {
 				if (scope.atwoon == "ON" && scope.atwohour == hours && scope.atwominute == minutes && scope.atwoampm == "AM") {
-					element.getElementById("asound2").play();
+					document.getElementById("asound2").play();
 				}
 			}
 		}
 
 		//snooze
 		scope.snooze = function() {
-			alarm1 = element.getElementById("asound");
-			alarm2 = element.getElementById("asound2");
+			alarm1 = document.getElementById("asound");
+			alarm2 = document.getElementById("asound2");
 			
 			if (!(alarm1.paused)) {
 				var mins = 0;
@@ -206,8 +206,8 @@ app.directive('clock', ['$interval', function($interval) {
 
 		//alarm off
 		scope.off = function() {
-			alarm1 = element.getElementById("asound");
-			alarm2 = element.getElementById("asound2");
+			alarm1 = document.getElementById("asound");
+			alarm2 = document.getElementById("asound2");
 			if (!(alarm1.paused)) {
 				scope.aoneon = "OFF";
 				alarm1.pause();
