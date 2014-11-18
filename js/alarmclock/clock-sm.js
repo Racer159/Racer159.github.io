@@ -159,12 +159,11 @@ app.directive('smClock', ['$interval', function($interval) {
 		// start the UI update process; save the timeoutId for cancelling
 		timeoutIdSmall = $interval(function() {
 			drawSmall(); // update DOM
-		}, 40);
+		}, 100);
 	}
 
 	return {
 		restrict: 'AEC',
-		scope: {},
 		link: linkSmall,
 		templateUrl: 'js/alarmclock/clock-sm.html'
 	};
