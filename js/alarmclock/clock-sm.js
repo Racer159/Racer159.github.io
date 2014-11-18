@@ -1,6 +1,6 @@
 var app = angular.module('main');
 
-app.directive('clocksm', ['$interval', function($interval) {
+app.directive('smClock', ['$interval', function($interval) {
 
 	function linkSmall(scope, element, attrs) {
 		var timeoutId;
