@@ -159,7 +159,7 @@ app.directive('smClock', ['$interval', function($interval) {
 		// start the UI update process; save the timeoutId for cancelling
 		timeoutIdSmall = $interval(function() {
 			drawSmall(); // update DOM
-		}, 100);
+		}, 1000);
 	}
 
 	return {
