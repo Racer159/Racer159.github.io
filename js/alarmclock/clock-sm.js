@@ -41,7 +41,7 @@ app.directive('smClock', ['$interval', function($interval) {
 			gradient.addColorStop(0, '#DDEEFF');
 			gradient.addColorStop(1, '#FFFFFF');
 			ctx.fillStyle = gradient;
-			ctx.fillRect(0, 0, 200, 200);
+			ctx.fillRect(0, 0, 400, 400);
 
 			ctx.strokeStyle = '#00CCFF';
 			ctx.shadowColor = '#00CCFF';
