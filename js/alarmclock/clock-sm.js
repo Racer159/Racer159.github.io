@@ -1,9 +1,8 @@
 var app = angular.module('main');
 
 app.directive('clocksm', ['$interval', function($interval) {
-	console.log('I am running');
 
-	function link(scope, element, attrs) {
+	function linkSmall(scope, element, attrs) {
 		var timeoutId;
 	
 		//get the canvas object
@@ -64,18 +63,6 @@ app.directive('clocksm', ['$interval', function($interval) {
 			ctx.beginPath();
 			ctx.arc(200, 200, 90, -0.5*Math.PI, (nowseconds*Math.PI)/30-0.5*Math.PI);
 			ctx.stroke();
-
-			//draw the text
-			//date
-			ctx.shadowColor = '#BCBCBC';
-			ctx.font = "40px Segoe UI";
-			ctx.fillStyle = '#121212';
-			ctx.fillText(today, 150, 100);
-
-			//time
-			ctx.font = "36px Segoe UI";
-			ctx.fillStyle = '#121212';
-			ctx.fillText(time, 150, 150);
 
 			//check the alarm
 			//alarm one
@@ -188,7 +175,7 @@ app.directive('clocksm', ['$interval', function($interval) {
 
 	return {
 		restrict: 'AEC',
-		link: link,
+		link: linkSmall,
 		templateUrl: 'js/alarmclock/clock-sm.html'
 	};
 }]);
