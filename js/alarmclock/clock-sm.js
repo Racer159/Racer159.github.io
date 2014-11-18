@@ -164,6 +164,7 @@ app.directive('smClock', ['$interval', function($interval) {
 
 	return {
 		restrict: 'AEC',
+		scope: {},
 		link: linkSmall,
 		templateUrl: 'js/alarmclock/clock-sm.html'
 	};

@@ -241,6 +241,7 @@ app.directive('clock', ['$interval', function($interval) {
 
 	return {
 		restrict: 'AEC',
+		scope: {},
 		link: link,
 		templateUrl: 'js/alarmclock/clock.html'
 	};
