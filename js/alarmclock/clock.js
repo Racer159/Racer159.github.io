@@ -1,9 +1,12 @@
 var app = angular.module('main');
 
-app.directive('clock', ['$interval', function($interval) {
+app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 
 	function link(scope, element, attrs) {
 		var timeoutId;
+		
+		var template = $compile('<div ng-include="\'js/alarmclock/clock-' + attrs.size + '.html\'"></div>')(scope);
+        element.append(template);
 		
 		//get the canvas object
 		var clock = document.getElementById('canvas-' + attrs.size);
@@ -255,9 +258,6 @@ app.directive('clock', ['$interval', function($interval) {
 
 	return {
 		restrict: 'E',
-		compile: function(element, attrs) {
-            element.append('<div ng-include="\'js/alarmclock/clock-' + attrs.size + '.html\'"></div>');
-        },
 		link: link
 	};
 }]);
