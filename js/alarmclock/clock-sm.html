@@ -1,0 +1,108 @@
+<div id="clock-sm">
+	<canvas id="canvas" width="200" height="200"></canvas>
+	<div id='alarm-sm'>
+		<h2>Alarm 1<h2/>
+		<label>
+			<select id="hour1" ng-model="aonehour" class="one">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="0">12</option>
+			</select>
+		</label>
+		:
+		<label>
+			<select id="minute1" ng-model="aoneminute" class="one">
+				<option value="0">00</option>
+				<option value="5">05</option>
+				<option value="10">10</option>
+				<option value="15">15</option>
+				<option value="20">20</option>
+				<option value="25">25</option>
+				<option value="30">30</option>
+				<option value="35">35</option>
+				<option value="40">40</option>
+				<option value="45">45</option>
+				<option value="50">50</option>
+				<option value="55">55</option>
+			</select>
+		</label>
+		<label>
+			<select id="ampm1" ng-model="aoneampm" class="one">
+				<option value="AM">AM</option>
+				<option value="PM">PM</option>
+			</select>
+		</label>
+		/
+		<label>
+			<select id="onoff1" ng-model="aoneon" class="one">
+				<option value="OFF">OFF</option>
+				<option value="ON">ON</option>
+			</select>
+		</label>
+		<h2>Alarm 2<h2/>
+		<label>
+			<select id="hour2" ng-model="atwohour"  class="two">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="0">12</option>
+			</select>
+		</label>
+		:
+		<label>
+			<select id="minute2" ng-model="atwominute"  class="two">
+				<option value="0">00</option>
+				<option value="5">05</option>
+				<option value="10">10</option>
+				<option value="15">15</option>
+				<option value="20">20</option>
+				<option value="25">25</option>
+				<option value="30">30</option>
+				<option value="35">35</option>
+				<option value="40">40</option>
+				<option value="45">45</option>
+				<option value="50">50</option>
+				<option value="55">55</option>
+			</select>
+		</label>
+		<label>
+			<select id="ampm2" ng-model="atwoampm" class="two">
+				<option value="AM">AM</option>
+				<option value="PM">PM</option>
+			</select>
+		</label>
+		/
+		<label>
+			<select id="onoff2" ng-model="atwoon" class="two">
+				<option value="OFF">OFF</option>
+				<option value="ON">ON</option>
+			</select>
+		</label>
+		<br/>
+		<br/>
+		<br/>
+	</div>
+	<div id="alarmbuttons-sm">
+		<button id="snooze" ng-click="snooze()" type="button" class="btn btn-default" style="font-size: 18px; width: 150px; height: 50px;">SNOOZE</button>
+		<button id="off" ng-click="off()" type="button" class="btn btn-default" style="font-size: 18px; width: 150px; height: 50px;">ALARM OFF</button>
+	</div>
+	<audio id="asound" src="audio/alarm.mp3" preload="auto" loop></audio>
+	<audio id="asound2" src="audio/alarm2.mp3" preload="auto" loop></audio>
+</div>
