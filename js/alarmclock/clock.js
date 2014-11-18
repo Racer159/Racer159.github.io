@@ -4,9 +4,9 @@ app.directive('clock', ['$interval', function($interval) {
 
 	function link(scope, element, attrs) {
 		var timeoutId;
-	
+		
 		//get the canvas object
-		var clock = document.getElementById('canvas');
+		var clock = document.getElementById('canvas-' + attrs.size);
 		var ctx = clock.getContext('2d');
 
 		//set the alarm variables
@@ -20,7 +20,7 @@ app.directive('clock', ['$interval', function($interval) {
 		scope.atwominute = 0;
 		scope.atwoampm = "AM";
 		scope.atwoon = "OFF";
-	
+		
 		/*Draw the clock to the screen*/
 		function draw() {
 			//get the date
@@ -34,102 +34,93 @@ app.directive('clock', ['$interval', function($interval) {
 			var seconds = now.getSeconds();
 			var millis = now.getMilliseconds();
 			var nowseconds = seconds + (millis/1000);
-
-			//background and style
-			ctx.shadowBlur = 0;
-			gradient = ctx.createRadialGradient(200, 200, 5, 200, 200, 220);
-			gradient.addColorStop(0, '#DDEEFF');
-			gradient.addColorStop(1, '#FFFFFF');
-			ctx.fillStyle = gradient;
-			ctx.fillRect(0, 0, 950, 400);
-
-			gradientred = ctx.createRadialGradient(835, 165, 5, 835, 165, 55);
-			gradientred.addColorStop(0, '#FFCCCC');
-			gradientred.addColorStop(1, '#FFFFFF');
-			ctx.fillStyle = gradientred;
-			ctx.fillRect(785, 115, 110, 110);
-
-			gradientyel = ctx.createRadialGradient(835, 300, 5, 835, 300, 55);
-			gradientyel.addColorStop(0, '#FFFFCC');
-			gradientyel.addColorStop(1, '#FFFFFF');
-			ctx.fillStyle = gradientyel;
-			ctx.fillRect(785, 250, 110, 110);
-
-			ctx.strokeStyle = '#00CCFF';
-			ctx.shadowColor = '#00CCFF';
-			ctx.lineWidth = 14;
-			ctx.lineCap = 'round';
-			ctx.shadowBlur = 15;
-
-			//hours
-			ctx.beginPath();
-			ctx.arc(200, 200, 150, -0.5*Math.PI, (hours*Math.PI)/12-0.5*Math.PI);
-			ctx.stroke();
-
-			//minutes
-			ctx.beginPath();
-			ctx.arc(200, 200, 120, -0.5*Math.PI, (minutes*Math.PI)/30-0.5*Math.PI);
-			ctx.stroke();
-
-			//seconds
-			ctx.beginPath();
-			ctx.arc(200, 200, 90, -0.5*Math.PI, (nowseconds*Math.PI)/30-0.5*Math.PI);
-			ctx.stroke();
-
-			//alarm1
-			ctx.lineWidth = 10;
-			ctx.strokeStyle = '#FF0000';
-			ctx.shadowColor = '#FF0000';
-			ctx.beginPath();
-			if (scope.aoneampm == "AM") {
-				ctx.arc(840, 170, 50, -0.5*Math.PI, (scope.aonehour*Math.PI)/12-0.5*Math.PI);
+			if (attrs.size == 'sm') {
+				ctx.shadowBlur = 0;
+				gradient = ctx.createRadialGradient(200, 200, 5, 200, 200, 220);
+				gradient.addColorStop(0, '#DDEEFF');
+				gradient.addColorStop(1, '#FFFFFF');
+				ctx.fillStyle = gradient;
+				ctx.fillRect(0, 0, 400, 400);
+				
+				drawCommon(ctx);
 			} else {
-				ctx.arc(840, 170, 50, -0.5*Math.PI, ((scope.aonehour-12)*Math.PI)/12-0.5*Math.PI);
+				//background and style
+				ctx.shadowBlur = 0;
+				gradient = ctx.createRadialGradient(200, 200, 5, 200, 200, 220);
+				gradient.addColorStop(0, '#DDEEFF');
+				gradient.addColorStop(1, '#FFFFFF');
+				ctx.fillStyle = gradient;
+				ctx.fillRect(0, 0, 950, 400);
+
+				gradientred = ctx.createRadialGradient(835, 165, 5, 835, 165, 55);
+				gradientred.addColorStop(0, '#FFCCCC');
+				gradientred.addColorStop(1, '#FFFFFF');
+				ctx.fillStyle = gradientred;
+				ctx.fillRect(785, 115, 110, 110);
+
+				gradientyel = ctx.createRadialGradient(835, 300, 5, 835, 300, 55);
+				gradientyel.addColorStop(0, '#FFFFCC');
+				gradientyel.addColorStop(1, '#FFFFFF');
+				ctx.fillStyle = gradientyel;
+				ctx.fillRect(785, 250, 110, 110);
+
+				drawCommon(ctx);
+
+				//alarm1
+				ctx.lineWidth = 10;
+				ctx.strokeStyle = '#FF0000';
+				ctx.shadowColor = '#FF0000';
+				ctx.beginPath();
+				if (scope.aoneampm == "AM") {
+					ctx.arc(840, 170, 50, -0.5*Math.PI, (scope.aonehour*Math.PI)/12-0.5*Math.PI);
+				} else {
+					ctx.arc(840, 170, 50, -0.5*Math.PI, ((scope.aonehour-12)*Math.PI)/12-0.5*Math.PI);
+				}
+				ctx.stroke();
+				ctx.beginPath();
+				ctx.arc(840, 170, 30, -0.5*Math.PI, (scope.aoneminute*Math.PI)/30-0.5*Math.PI);
+				ctx.stroke();
+
+				//alarm2
+				ctx.strokeStyle = '#FFCC00';
+				ctx.shadowColor = '#FFCC00';
+				ctx.beginPath();
+				if (scope.atwoampm == "AM") {
+					ctx.arc(840, 305, 50, -0.5*Math.PI, (scope.atwohour*Math.PI)/12-0.5*Math.PI);
+				} else {
+					ctx.arc(840, 305, 50, -0.5*Math.PI, ((scope.atwohour-12)*Math.PI)/12-0.5*Math.PI);
+				}
+				ctx.stroke();
+				ctx.beginPath();
+				ctx.arc(840, 305, 30, -0.5*Math.PI, (scope.atwominute*Math.PI)/30-0.5*Math.PI);
+				ctx.stroke();
+
+				//draw the text
+				//date
+				ctx.shadowColor = '#BCBCBC';
+				ctx.font = "54px Segoe UI";
+				ctx.fillStyle = '#121212';
+				ctx.fillText(today, 410, 70);
+
+				//time
+				ctx.font = "42px Segoe UI";
+				ctx.fillStyle = '#121212';
+				ctx.fillText(time, 410, 120);
+
+				//alarms
+				ctx.font = "25px Segoe UI";
+				ctx.fillStyle = '#121212';
+				ctx.fillText("ALARM", 410, 190);
+				ctx.fillText("ALARM", 410, 263);
+
+				ctx.font = "25px Segoe UI";
+				ctx.fillStyle = '#FF0000';
+				ctx.fillText("1", 495, 190);
+
+				ctx.fillStyle = '#FFCC00';
+				ctx.fillText("2", 495, 263);
 			}
-			ctx.stroke();
-			ctx.beginPath();
-			ctx.arc(840, 170, 30, -0.5*Math.PI, (scope.aoneminute*Math.PI)/30-0.5*Math.PI);
-			ctx.stroke();
-	
-			//alarm2
-			ctx.strokeStyle = '#FFCC00';
-			ctx.shadowColor = '#FFCC00';
-			ctx.beginPath();
-			if (scope.atwoampm == "AM") {
-				ctx.arc(840, 305, 50, -0.5*Math.PI, (scope.atwohour*Math.PI)/12-0.5*Math.PI);
-			} else {
-				ctx.arc(840, 305, 50, -0.5*Math.PI, ((scope.atwohour-12)*Math.PI)/12-0.5*Math.PI);
-			}
-			ctx.stroke();
-			ctx.beginPath();
-			ctx.arc(840, 305, 30, -0.5*Math.PI, (scope.atwominute*Math.PI)/30-0.5*Math.PI);
-			ctx.stroke();
-
-			//draw the text
-			//date
-			ctx.shadowColor = '#BCBCBC';
-			ctx.font = "54px Segoe UI";
-			ctx.fillStyle = '#121212';
-			ctx.fillText(today, 410, 70);
-
-			//time
-			ctx.font = "42px Segoe UI";
-			ctx.fillStyle = '#121212';
-			ctx.fillText(time, 410, 120);
-
-			//alarms
-			ctx.font = "25px Segoe UI";
-			ctx.fillStyle = '#121212';
-			ctx.fillText("ALARM", 410, 190);
-			ctx.fillText("ALARM", 410, 263);
-
-			ctx.font = "25px Segoe UI";
-			ctx.fillStyle = '#FF0000';
-			ctx.fillText("1", 495, 190);
-
-			ctx.fillStyle = '#FFCC00';
-			ctx.fillText("2", 495, 263);
-
+			
 			//check the alarm
 			//alarm one
 			if (hours>11) {
@@ -152,6 +143,29 @@ app.directive('clock', ['$interval', function($interval) {
 					document.getElementById("asound2").play();
 				}
 			}
+		}
+		
+		function drawCommon(ctx) {
+			ctx.strokeStyle = '#00CCFF';
+			ctx.shadowColor = '#00CCFF';
+			ctx.lineWidth = 14;
+			ctx.lineCap = 'round';
+			ctx.shadowBlur = 15;
+
+			//hours
+			ctx.beginPath();
+			ctx.arc(200, 200, 150, -0.5*Math.PI, (hours*Math.PI)/12-0.5*Math.PI);
+			ctx.stroke();
+
+			//minutes
+			ctx.beginPath();
+			ctx.arc(200, 200, 120, -0.5*Math.PI, (minutes*Math.PI)/30-0.5*Math.PI);
+			ctx.stroke();
+
+			//seconds
+			ctx.beginPath();
+			ctx.arc(200, 200, 90, -0.5*Math.PI, (nowseconds*Math.PI)/30-0.5*Math.PI);
+			ctx.stroke();
 		}
 
 		//snooze
@@ -240,8 +254,10 @@ app.directive('clock', ['$interval', function($interval) {
 	}
 
 	return {
-		restrict: 'AEC',
+		restrict: 'E',
 		link: link,
-		templateUrl: 'js/alarmclock/clock.html'
+		compile: function(element, attrs) {
+            element.append('<div ng-include="\'js/alarmclock/clock-' + attrs.size + '.html\'"></div>');
+        }
 	};
 }]);
