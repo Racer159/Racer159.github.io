@@ -3,7 +3,7 @@ var app = angular.module('main');
 app.directive('smClock', ['$interval', function($interval) {
 
 	function linkSmall(scope, element, attrs) {
-		var timeoutId;
+		var timeoutIdSmall;
 	
 		//get the canvas object
 		var clock = document.getElementById('canvas');
@@ -22,7 +22,7 @@ app.directive('smClock', ['$interval', function($interval) {
 		scope.atwoon = "OFF";
 	
 		/*Draw the clock to the screen*/
-		function draw() {
+		function drawSmall() {
 			//get the date
 			var now = new Date();
 
@@ -89,7 +89,7 @@ app.directive('smClock', ['$interval', function($interval) {
 		}
 
 		//snooze
-		scope.snooze = function() {
+		scope.snoozeSmall = function() {
 			alarm1 = document.getElementById("asound");
 			alarm2 = document.getElementById("asound2");
 			
@@ -139,7 +139,7 @@ app.directive('smClock', ['$interval', function($interval) {
 		}
 
 		//alarm off
-		scope.off = function() {
+		scope.offSmall = function() {
 			alarm1 = document.getElementById("asound");
 			alarm2 = document.getElementById("asound2");
 			if (!(alarm1.paused)) {
@@ -152,24 +152,13 @@ app.directive('smClock', ['$interval', function($interval) {
 			}
 		}
 
-		//helper to zero pad a string
-		function addZero(i) {
-			var s = "";
-			if (i<10) {
-				s = "0" + i.toString();
-			} else {
-				s = i.toString();
-			}
-			return s;
-		}
-
 		element.on('$destroy', function() {
-			$interval.cancel(timeoutId);
+			$interval.cancel(timeoutIdSmall);
 		});
 
 		// start the UI update process; save the timeoutId for cancelling
-		timeoutId = $interval(function() {
-			draw(); // update DOM
+		timeoutIdSmall = $interval(function() {
+			drawSmall(); // update DOM
 		}, 40);
 	}
 
