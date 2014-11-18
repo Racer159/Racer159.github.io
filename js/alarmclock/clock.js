@@ -6,6 +6,7 @@ app.directive('clock', ['$interval', function($interval) {
 		var timeoutId;
 		
 		element.append('<div ng-include="\'js/alarmclock/clock-' + attrs.size + '.html\'"></div>');
+		scope.$apply();
 		
 		//get the canvas object
 		var clock = document.getElementById('canvas-' + attrs.size);
