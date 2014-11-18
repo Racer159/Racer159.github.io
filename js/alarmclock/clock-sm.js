@@ -68,14 +68,14 @@ app.directive('clocksm', ['$interval', function($interval) {
 			//draw the text
 			//date
 			ctx.shadowColor = '#BCBCBC';
-			ctx.font = "54px Segoe UI";
+			ctx.font = "40px Segoe UI";
 			ctx.fillStyle = '#121212';
-			ctx.fillText(today, 100, 70);
+			ctx.fillText(today, 150, 100);
 
 			//time
-			ctx.font = "42px Segoe UI";
+			ctx.font = "36px Segoe UI";
 			ctx.fillStyle = '#121212';
-			ctx.fillText(time, 100, 120);
+			ctx.fillText(time, 150, 150);
 
 			//check the alarm
 			//alarm one
@@ -180,7 +180,7 @@ app.directive('clocksm', ['$interval', function($interval) {
 			$interval.cancel(timeoutId);
 		});
 
-		// start the UI update process; save the timeoutId for canceling
+		// start the UI update process; save the timeoutId for cancelling
 		timeoutId = $interval(function() {
 			draw(); // update DOM
 		}, 40);
