@@ -1,6 +1,6 @@
 var app = angular.module('main');
 
-app.directive('clock-sm', ['$interval', function($interval) {
+app.directive('clocksm', ['$interval', function($interval) {
 	console.log('I am running');
 
 	function link(scope, element, attrs) {
