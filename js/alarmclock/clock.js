@@ -11,7 +11,7 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 		console.log(element);
 		
 		//get the canvas object
-		var clock = element.find('#canvas-' + attrs.size);
+		var clock = element.find('canvas');
 		var ctx = clock.getContext('2d');
 
 		//set the alarm variables
