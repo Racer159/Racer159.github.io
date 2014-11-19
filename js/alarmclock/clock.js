@@ -11,7 +11,7 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 		console.log(element);
 		
 		//get the canvas object
-		var clock = document.getElementById('canvas-' + attrs.size);
+		var clock = element.find('#canvas-' + attrs.size);
 		var ctx = clock.getContext('2d');
 
 		//set the alarm variables
@@ -130,22 +130,22 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 			//alarm one
 			if (hours>11) {
 				if (scope.aoneon == "ON" && scope.aonehour == hours-12 && scope.aoneminute == minutes && scope.aoneampm == "PM") {
-					document.getElementById("asound").play();
+					element.find("#asound").play();
 				}
 			} else {
 				if (scope.aoneon == "ON" && scope.aonehour == hours && scope.aoneminute == minutes && scope.aoneampm == "AM") {
-					document.getElementById("asound").play();
+					element.find("#asound").play();
 				}
 			}
 
 			//alarm two
 			if (hours>11) {
 				if (scope.atwoon == "ON" && scope.atwohour == hours-12 && scope.atwominute == minutes && scope.atwoampm == "PM") {
-					document.getElementById("asound2").play();
+					element.find("#asound2").play();
 				}
 			} else {
 				if (scope.atwoon == "ON" && scope.atwohour == hours && scope.atwominute == minutes && scope.atwoampm == "AM") {
-					document.getElementById("asound2").play();
+					element.find("#asound2").play();
 				}
 			}
 		}
@@ -175,8 +175,8 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 
 		//snooze
 		scope.snooze = function() {
-			alarm1 = document.getElementById("asound");
-			alarm2 = document.getElementById("asound2");
+			alarm1 = element.find("#asound");
+			alarm2 = element.find("#asound2");
 			
 			if (!(alarm1.paused)) {
 				var mins = 0;
@@ -225,8 +225,8 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 
 		//alarm off
 		scope.off = function() {
-			alarm1 = document.getElementById("asound");
-			alarm2 = document.getElementById("asound2");
+			alarm1 = element.find("#asound");
+			alarm2 = element.find("#asound2");
 			if (!(alarm1.paused)) {
 				scope.aoneon = "OFF";
 				alarm1.pause();
