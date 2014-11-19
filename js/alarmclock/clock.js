@@ -11,7 +11,7 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 		console.log(element);
 		
 		//get the canvas object
-		var clock = element.find('canvas-' + attrs.size);
+		var clock = element.find('#canvas-' + attrs.size);
 		console.log(clock);
 		console.log(clock[0]);
 		var ctx = clock[0].getContext('2d');
