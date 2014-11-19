@@ -8,6 +8,8 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 		var template = $compile('<div ng-include="\'js/alarmclock/clock-' + attrs.size + '.html\'"></div>')(scope);
         element.append(template);
 		
+		console.log(element);
+		
 		//get the canvas object
 		var clock = document.getElementById('canvas-' + attrs.size);
 		var ctx = clock.getContext('2d');
