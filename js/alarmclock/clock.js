@@ -12,8 +12,9 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 		
 		//get the canvas object
 		var clock = element.find('canvas');
-		console.log(clock[0]);
-		var ctx = clock[0].getContext('2d');
+		console.log(clock);
+		console.log(clock);
+		var ctx = clock.getContext('2d');
 
 		//set the alarm variables
 		scope.aonehour = 1;
