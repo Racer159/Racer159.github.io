@@ -54,17 +54,16 @@ body {
 
   position:absolute;
   top:0;
-  left:0;
+  left:15px;
   right:0;
   bottom:0;
-  padding-left:15px;
 }
 
 .view-animate.ng-enter {
   left:100%;
 }
 .view-animate.ng-enter.ng-enter-active {
-  left:0;
+  left:15px;
 }
 .view-animate.ng-leave.ng-leave-active {
   left:-100%;
