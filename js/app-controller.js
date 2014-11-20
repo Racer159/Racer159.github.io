@@ -2,6 +2,7 @@ var app = angular.module('main', ['ngRoute', 'ngAnimate', 'ui.bootstrap']);
 
 app.controller('AppController', function($scope, $log, $location, $window) {
 	$scope.home = 'active';
+	$scope.isCollapsed = true;
 	
 	$scope.gotoGitHub = function() {
 		$window.location.href = 'https://github.com/Racer159';
