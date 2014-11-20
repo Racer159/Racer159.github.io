@@ -2,103 +2,38 @@
 	<canvas id="canvas-lg" width="950" height="400"></canvas>
 	<div id='alarm'>
 		<label>
-			<select id="hour1" ng-model="aonehour" class="one">
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-				<option value="9">9</option>
-				<option value="10">10</option>
-				<option value="11">11</option>
-				<option value="0">12</option>
-			</select>
+			<select id="hour1" ng-model="aonehour" class="one" ng-options="hour for hour in hours"></select>
 		</label>
 		:
 		<label>
-			<select id="minute1" ng-model="aoneminute" class="one">
-				<option value="0">00</option>
-				<option value="5">05</option>
-				<option value="10">10</option>
-				<option value="15">15</option>
-				<option value="20">20</option>
-				<option value="25">25</option>
-				<option value="30">30</option>
-				<option value="35">35</option>
-				<option value="40">40</option>
-				<option value="45">45</option>
-				<option value="50">50</option>
-				<option value="55">55</option>
-			</select>
+			<select id="minute1" ng-model="aoneminute" class="one" ng-options="min.value as min.label for min in minutes"></select>
 		</label>
 		<label>
-			<select id="ampm1" ng-model="aoneampm" class="one">
+			<select id="ampm1" ng-model="aoneampm" class="one" ng-options="ap for ap in ampms"></select>
+		</label>
+		/
+		<label>
+			<select id="onoff1" ng-model="aoneon" class="one" ng-options="of for of in onoffs"></select>
+		</label>
+		<br><br><br>
+		<label>
+			<select id="hour2" ng-model="atwohour"  class="two" ng-options="hour for hour in hours"></select>
+		</label>
+		:
+		<label>
+			<select id="minute2" ng-model="atwominute"  class="two" ng-options="min.value as min.label for min in minutes"></select>
+		</label>
+		<label>
+			<select id="ampm2" ng-model="atwoampm" class="two" ng-options="ap for ap in ampms">
 				<option value="AM">AM</option>
 				<option value="PM">PM</option>
 			</select>
 		</label>
 		/
 		<label>
-			<select id="onoff1" ng-model="aoneon" class="one">
-				<option value="OFF">OFF</option>
-				<option value="ON">ON</option>
-			</select>
+			<select id="onoff2" ng-model="atwoon" class="two" ng-options="of for of in onoffs"></select>
 		</label>
-		<br>
-		<br>
-		<br>
-		<label>
-			<select id="hour2" ng-model="atwohour"  class="two">
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-				<option value="9">9</option>
-				<option value="10">10</option>
-				<option value="11">11</option>
-				<option value="0">12</option>
-			</select>
-		</label>
-		:
-		<label>
-			<select id="minute2" ng-model="atwominute"  class="two">
-				<option value="0">00</option>
-				<option value="5">05</option>
-				<option value="10">10</option>
-				<option value="15">15</option>
-				<option value="20">20</option>
-				<option value="25">25</option>
-				<option value="30">30</option>
-				<option value="35">35</option>
-				<option value="40">40</option>
-				<option value="45">45</option>
-				<option value="50">50</option>
-				<option value="55">55</option>
-			</select>
-		</label>
-		<label>
-			<select id="ampm2" ng-model="atwoampm" class="two">
-				<option value="AM">AM</option>
-				<option value="PM">PM</option>
-			</select>
-		</label>
-		/
-		<label>
-			<select id="onoff2" ng-model="atwoon" class="two">
-				<option value="OFF">OFF</option>
-				<option value="ON">ON</option>
-			</select>
-		</label>
-		<br>
-		<br>
-		<br>
+		<br><br><br>
 	</div>
 	<div id="alarmbuttons">
 		<button id="snooze" ng-click="snooze()" type="button" class="btn btn-default" style="font-size: 18px; width: 150px; height: 50px;">SNOOZE</button>
