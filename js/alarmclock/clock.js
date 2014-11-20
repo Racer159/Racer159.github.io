@@ -107,22 +107,22 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 				//draw the text
 				//date
 				ctx.shadowColor = '#BCBCBC';
-				ctx.font = "54px Segoe UI";
+				ctx.font = "54px Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif";
 				ctx.fillStyle = '#121212';
 				ctx.fillText(today, 410, 70);
 
 				//time
-				ctx.font = "42px Segoe UI";
+				ctx.font = "42px Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif";
 				ctx.fillStyle = '#121212';
 				ctx.fillText(time, 410, 120);
 
 				//alarms
-				ctx.font = "25px Segoe UI";
+				ctx.font = "25px Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif";
 				ctx.fillStyle = '#121212';
 				ctx.fillText("ALARM", 410, 190);
 				ctx.fillText("ALARM", 410, 263);
 
-				ctx.font = "25px Segoe UI";
+				ctx.font = "25px Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif";
 				ctx.fillStyle = '#FF0000';
 				ctx.fillText("1", 495, 190);
 
