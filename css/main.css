@@ -41,9 +41,8 @@ body {
   position:relative;
   position:relative;
   background:white;
-  height:800px;
-  min-height:800px;
-  overflow:hidden;
+  height:100%;
+  min-height:100%;
 }
 
 .view-animate.ng-enter, .view-animate.ng-leave {
