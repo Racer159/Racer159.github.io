@@ -28,7 +28,7 @@ app.controller('AppController', function($scope, $log, $location, $window) {
 			$scope.home = 'active';
 		} else if ($location.path() == '/resume') {
 			$scope.resume = 'active';
-		} else if ($location.path() == '/projects') {
+		} else if ($location.path().indexOf('/projects') > -1) {
 			$scope.projects = 'active';
 		} else {
 			$scope.github = 'active';
