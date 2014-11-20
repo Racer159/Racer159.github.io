@@ -5,8 +5,8 @@
 	<div>
 		<p>Description...  This project was the creation of me...</p>
 	</div>
-	<div class="well" ng-init="slides = [{image: 'images/projects/snes/main.jpg', text: 'Working on Stuff'}]">
-		<carousel interval="myInterval">
+	<div class="well" ng-init="slides = [{image: 'images/projects/snes/main.jpg', text: 'Working on Stuff'}]; intervalMs = 5000;">
+		<carousel interval="intervalMs">
 			<slide ng-repeat="slide in slides" active="slide.active">
 			<img ng-src="{{slide.image}}" style="margin:auto;">
 				<div class="carousel-caption">
