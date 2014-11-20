@@ -5,17 +5,9 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 	function link(scope, element, attrs) {
 		var timeoutId;
 		
-		var template = $compile('<div ng-include="\'js/alarmclock/clock-' + attrs.size + '.html\'"></div>')(scope);
-        element.append(template);
-		
-		console.log(element);
-		
 		//get the canvas object
-		var clock = element.find('#canvas-' + attrs.size);
-		console.log(clock);
-		console.log(clock[0]);
-		console.log(element.children("clock"));
-		var ctx = clock[0].getContext('2d');
+		var clock = document.getElementById('canvas-' + attrs.size);
+		var ctx = clock.getContext('2d');
 
 		//set the alarm variables
 		scope.aonehour = 1;
@@ -133,22 +125,22 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 			//alarm one
 			if (hours>11) {
 				if (scope.aoneon == "ON" && scope.aonehour == hours-12 && scope.aoneminute == minutes && scope.aoneampm == "PM") {
-					element.find("#asound").play();
+					document.getElementById("asound").play();
 				}
 			} else {
 				if (scope.aoneon == "ON" && scope.aonehour == hours && scope.aoneminute == minutes && scope.aoneampm == "AM") {
-					element.find("#asound").play();
+					document.getElementById("asound").play();
 				}
 			}
 
 			//alarm two
 			if (hours>11) {
 				if (scope.atwoon == "ON" && scope.atwohour == hours-12 && scope.atwominute == minutes && scope.atwoampm == "PM") {
-					element.find("#asound2").play();
+					document.getElementById("asound2").play();
 				}
 			} else {
 				if (scope.atwoon == "ON" && scope.atwohour == hours && scope.atwominute == minutes && scope.atwoampm == "AM") {
-					element.find("#asound2").play();
+					document.getElementById("asound2").play();
 				}
 			}
 		}
@@ -178,8 +170,8 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 
 		//snooze
 		scope.snooze = function() {
-			alarm1 = element.find("#asound");
-			alarm2 = element.find("#asound2");
+			alarm1 = document.getElementById("asound");
+			alarm2 = document.getElementById("asound2");
 			
 			if (!(alarm1.paused)) {
 				var mins = 0;
@@ -228,8 +220,8 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 
 		//alarm off
 		scope.off = function() {
-			alarm1 = element.find("#asound");
-			alarm2 = element.find("#asound2");
+			alarm1 = document.getElementById("asound");
+			alarm2 = document.getElementById("asound2");
 			if (!(alarm1.paused)) {
 				scope.aoneon = "OFF";
 				alarm1.pause();
@@ -263,6 +255,9 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 
 	return {
 		restrict: 'E',
+		templateUrl: function (elem, attrs){
+			return 'js/alarmclock/clock-' + attrs.size + '.html';
+		},
 		link: link
 	};
 }]);
