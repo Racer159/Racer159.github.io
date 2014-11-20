@@ -119,8 +119,8 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 				//alarms
 				ctx.font = "25px Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif";
 				ctx.fillStyle = '#121212';
-				ctx.fillText("ALARM", 410, 190);
-				ctx.fillText("ALARM", 410, 263);
+				ctx.fillText("Alarm", 410, 190);
+				ctx.fillText("Alarm", 410, 263);
 
 				ctx.font = "25px Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif";
 				ctx.fillStyle = '#FF0000';
