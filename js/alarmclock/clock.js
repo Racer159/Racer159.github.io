@@ -34,6 +34,7 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 			var seconds = now.getSeconds();
 			var millis = now.getMilliseconds();
 			var nowseconds = seconds + (millis/1000);
+			
 			if (attrs.size == 'sm') {
 				ctx.shadowBlur = 0;
 				gradient = ctx.createRadialGradient(200, 200, 5, 200, 200, 220);
@@ -42,7 +43,7 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 				ctx.fillStyle = gradient;
 				ctx.fillRect(0, 0, 400, 400);
 				
-				drawCommon(ctx);
+				drawCommon(ctx, hours, minutes, nowseconds);
 			} else {
 				//background and style
 				ctx.shadowBlur = 0;
@@ -64,7 +65,7 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 				ctx.fillStyle = gradientyel;
 				ctx.fillRect(785, 250, 110, 110);
 
-				drawCommon(ctx);
+				drawCommon(ctx, hours, minutes, nowseconds);
 
 				//alarm1
 				ctx.lineWidth = 10;
@@ -145,7 +146,7 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 			}
 		}
 		
-		function drawCommon(ctx) {
+		function drawCommon(ctx, hours, minutes, nowseconds) {
 			ctx.strokeStyle = '#00CCFF';
 			ctx.shadowColor = '#00CCFF';
 			ctx.lineWidth = 14;
