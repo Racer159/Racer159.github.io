@@ -4,6 +4,10 @@ app.controller('AppController', function($scope, $log, $location, $window) {
 	$scope.home = 'active';
 	$scope.isCollapsed = true;
 	
+	$scope.$on('$viewContentLoaded', function(event) {
+		$window.ga('send', 'pageview', { page: $location.path() });
+	});
+	
 	$scope.gotoGitHub = function() {
 		$window.location.href = 'https://github.com/Racer159';
 	};
