@@ -6,22 +6,18 @@ app.controller('AppController', function($scope, $log, $location, $window) {
 	
 	$scope.gotoGitHub = function() {
 		$window.location.href = 'https://github.com/Racer159';
-		ga('send', 'pageview');
 	};
 	
 	$scope.gotoHome = function() {
 		$location.path('/home');
-		ga('send', 'pageview');
 	};
 	
 	$scope.gotoResume = function() {
 		$location.path('/resume');
-		ga('send', 'pageview');
 	};
 	
 	$scope.gotoProjects = function() {
 		$location.path('/projects');
-		ga('send', 'pageview');
 	};
 	
 	$scope.$on("$locationChangeSuccess", function(event){
