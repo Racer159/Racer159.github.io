@@ -60,11 +60,11 @@ body {
 }
 
 .view-animate.ng-enter {
-  left:200%;
+  transform: translate3d(200%, 0, 0);
 }
 .view-animate.ng-enter.ng-enter-active {
-  left:15px;
+  transform: translate3d(15px, 0, 0);
 }
 .view-animate.ng-leave.ng-leave-active {
-  left:-200%;
+  transform: translate3d(-200%, 0, 0);
 }
