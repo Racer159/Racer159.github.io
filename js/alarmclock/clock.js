@@ -259,7 +259,7 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 		// start the UI update process; save the timeoutId for cancelling
 		timeoutId = $interval(function() {
 			draw(); // update DOM
-		}, 40);
+		}, 200);
 	}
 
 	return {
