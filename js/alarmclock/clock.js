@@ -44,34 +44,23 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 			var nowseconds = seconds + (millis/1000);
 			
 			if (attrs.size == 'sm') {
+				//background and style small
 				ctx.shadowBlur = 0;
-				//gradient = ctx.createRadialGradient(200, 200, 5, 200, 200, 220);
-				//gradient.addColorStop(0, '#99D75B');
-				//gradient.addColorStop(1, '#FFFFFF');
-				//ctx.fillStyle = gradient;
-				//ctx.fillRect(0, 0, 400, 400);
-				//ctx.fillStyle = '#FFFFFF';
-				//ctx.fillRect(0, 0, 400, 400);
+				ctx.fillStyle = '#FFFFFF';
+				ctx.fillRect(0, 0, 400, 400);
 				
-				//ctx.strokeStyle = '#99D75B';
-				//ctx.stroke();
-				//ctx.beginPath();
-				ctx.arc(200, 200, 200, 0 , 2 * Math.PI);
+				ctx.arc(200, 200, 150, 0 , 2 * Math.PI);
 				ctx.fillStyle = "#99D75B";
 				ctx.fill();
 				
 				drawCommon(ctx, hours, minutes, nowseconds);
 			} else {
-				//background and style
+				//background and style large
 				ctx.shadowBlur = 0;
-				//gradient = ctx.createRadialGradient(200, 200, 5, 200, 200, 220);
-				//gradient.addColorStop(0, '#99D75B');
-				//gradient.addColorStop(1, '#FFFFFF');
-				//ctx.fillStyle = '#FFFFFF';
-				//ctx.fillRect(0, 0, 950, 400);
+				ctx.fillStyle = '#FFFFFF';
+				ctx.fillRect(0, 0, 950, 400);
 				
-				
-				ctx.arc(200, 200, 200, 0 , 2 * Math.PI);
+				ctx.arc(200, 200, 150, 0 , 2 * Math.PI);
 				ctx.fillStyle = "#99D75B";
 				ctx.fill();
 
@@ -169,11 +158,11 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 		}
 		
 		function drawCommon(ctx, hours, minutes, nowseconds) {
-			ctx.strokeStyle = '#00CCFF';
-			ctx.shadowColor = '#00CCFF';
+			ctx.strokeStyle = '#4d7b1e';
+			ctx.shadowColor = '#335214';
 			ctx.lineWidth = 14;
 			ctx.lineCap = 'round';
-			ctx.shadowBlur = 15;
+			ctx.shadowBlur = 0;
 
 			//hours
 			ctx.beginPath();
