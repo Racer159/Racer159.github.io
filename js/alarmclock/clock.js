@@ -45,47 +45,33 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 			
 			if (attrs.size == 'sm') {
 				//background and style small
-				ctx.shadowBlur = 0;
+				ctx.shadowBlur = 2;
 				ctx.fillStyle = '#FFFFFF';
 				ctx.fillRect(0, 0, 400, 400);
-				
-				ctx.beginPath();
-				ctx.arc(200, 200, 150, 0 , 2 * Math.PI);
-				ctx.fillStyle = "#99D75B";
-				ctx.fill();
-				ctx.lineWidth = 1;
-				ctx.strokeStyle = '#73b92d';
-				ctx.stroke();
 				
 				drawCommon(ctx, hours, minutes, nowseconds);
 			} else {
 				//background and style large
-				ctx.shadowBlur = 0;
+				ctx.shadowBlur = 2;
 				ctx.fillStyle = '#FFFFFF';
 				ctx.fillRect(0, 0, 950, 400);
 				
-				ctx.beginPath();
-				ctx.arc(200, 200, 150, 0 , 2 * Math.PI);
-				ctx.fillStyle = "#99D75B";
-				ctx.fill();
-				ctx.lineWidth = 1;
-				ctx.strokeStyle = '#73b92d';
-				ctx.stroke();
-				
+				ctx.shadowColor = '#CC0000';
 				ctx.beginPath();
 				ctx.arc(840, 170, 50, 0 , 2 * Math.PI);
 				ctx.fillStyle = "#FF0000";
 				ctx.fill();
 				ctx.lineWidth = 1;
-				ctx.strokeStyle = '#CC0000';
+				ctx.strokeStyle = '#FF0000';
 				ctx.stroke();
 				
+				ctx.shadowColor = '#CCA300';
 				ctx.beginPath();
 				ctx.arc(840, 305, 50, 0 , 2 * Math.PI);
 				ctx.fillStyle = "#FFCC00";
 				ctx.fill();
 				ctx.lineWidth = 1;
-				ctx.strokeStyle = '#CCA300';
+				ctx.strokeStyle = '#FFCC00';
 				ctx.stroke();
 
 				drawCommon(ctx, hours, minutes, nowseconds);
@@ -170,11 +156,19 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 		}
 		
 		function drawCommon(ctx, hours, minutes, nowseconds) {
+			ctx.shadowColor = '#73b92d';
+			ctx.beginPath();
+			ctx.arc(200, 200, 150, 0 , 2 * Math.PI);
+			ctx.fillStyle = "#99D75B";
+			ctx.fill();
+			ctx.lineWidth = 1;
+			ctx.strokeStyle = '#73b92d';
+			ctx.stroke();
+			
 			ctx.strokeStyle = '#4d7b1e';
 			ctx.shadowColor = '#335214';
 			ctx.lineWidth = 14;
 			ctx.lineCap = 'round';
-			ctx.shadowBlur = 2;
 
 			//hours
 			ctx.beginPath();
