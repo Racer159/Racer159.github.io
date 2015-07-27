@@ -49,13 +49,13 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 				ctx.fillStyle = '#FFFFFF';
 				ctx.fillRect(0, 0, 400, 400);
 				
-				context.beginPath();
+				ctx.beginPath();
 				ctx.arc(200, 200, 150, 0 , 2 * Math.PI);
 				ctx.fillStyle = "#99D75B";
 				ctx.fill();
-				context.lineWidth = 2;
-				context.strokeStyle = '#73b92d';
-				context.stroke();
+				ctx.lineWidth = 2;
+				ctx.strokeStyle = '#73b92d';
+				ctx.stroke();
 				
 				drawCommon(ctx, hours, minutes, nowseconds);
 			} else {
@@ -64,13 +64,13 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 				ctx.fillStyle = '#FFFFFF';
 				ctx.fillRect(0, 0, 950, 400);
 				
-				context.beginPath();
+				ctx.beginPath();
 				ctx.arc(200, 200, 150, 0 , 2 * Math.PI);
 				ctx.fillStyle = "#99D75B";
 				ctx.fill();
-				context.lineWidth = 2;
-				context.strokeStyle = '#73b92d';
-				context.stroke();
+				ctx.lineWidth = 2;
+				ctx.strokeStyle = '#73b92d';
+				ctx.stroke();
 
 				gradientred = ctx.createRadialGradient(835, 165, 5, 835, 165, 55);
 				gradientred.addColorStop(0, '#FFCCCC');
