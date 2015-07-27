@@ -45,21 +45,25 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 			
 			if (attrs.size == 'sm') {
 				ctx.shadowBlur = 0;
-				gradient = ctx.createRadialGradient(200, 200, 5, 200, 200, 220);
-				gradient.addColorStop(0, '#DDEEFF');
-				gradient.addColorStop(1, '#FFFFFF');
-				ctx.fillStyle = gradient;
-				ctx.fillRect(0, 0, 400, 400);
+				//gradient = ctx.createRadialGradient(200, 200, 5, 200, 200, 220);
+				//gradient.addColorStop(0, '#99D75B');
+				//gradient.addColorStop(1, '#FFFFFF');
+				//ctx.fillStyle = gradient;
+				//ctx.fillRect(0, 0, 400, 400);
+				ctx.strokeStyle = '#99D75B';
+				ctx.arc(475, 200, 150, 0 , 2 * Math.PI);
 				
 				drawCommon(ctx, hours, minutes, nowseconds);
 			} else {
 				//background and style
 				ctx.shadowBlur = 0;
-				gradient = ctx.createRadialGradient(200, 200, 5, 200, 200, 220);
-				gradient.addColorStop(0, '#DDEEFF');
-				gradient.addColorStop(1, '#FFFFFF');
-				ctx.fillStyle = gradient;
-				ctx.fillRect(0, 0, 950, 400);
+				//gradient = ctx.createRadialGradient(200, 200, 5, 200, 200, 220);
+				//gradient.addColorStop(0, '#99D75B');
+				//gradient.addColorStop(1, '#FFFFFF');
+				//ctx.fillStyle = gradient;
+				//ctx.fillRect(0, 0, 950, 400);
+				ctx.strokeStyle = '#99D75B';
+				ctx.arc(475, 200, 150, 0 , 2 * Math.PI);
 
 				gradientred = ctx.createRadialGradient(835, 165, 5, 835, 165, 55);
 				gradientred.addColorStop(0, '#FFCCCC');
