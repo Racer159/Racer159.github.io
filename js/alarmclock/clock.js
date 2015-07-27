@@ -49,6 +49,8 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 				ctx.fillStyle = '#FFFFFF';
 				ctx.fillRect(0, 0, 400, 400);
 				
+				ctx.shadowBlur = 1;
+				ctx.shadowColor = '#73b92d';
 				ctx.arc(200, 200, 150, 0 , 2 * Math.PI);
 				ctx.fillStyle = "#99D75B";
 				ctx.fill();
@@ -60,6 +62,8 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 				ctx.fillStyle = '#FFFFFF';
 				ctx.fillRect(0, 0, 950, 400);
 				
+				ctx.shadowBlur = 1;
+				ctx.shadowColor = '#73b92d';
 				ctx.arc(200, 200, 150, 0 , 2 * Math.PI);
 				ctx.fillStyle = "#99D75B";
 				ctx.fill();
@@ -162,7 +166,7 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 			ctx.shadowColor = '#335214';
 			ctx.lineWidth = 14;
 			ctx.lineCap = 'round';
-			ctx.shadowBlur = 0;
+			ctx.shadowBlur = 1;
 
 			//hours
 			ctx.beginPath();
