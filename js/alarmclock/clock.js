@@ -49,14 +49,14 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 				ctx.fillStyle = '#FFFFFF';
 				ctx.fillRect(0, 0, 300, 300);
 				
-				drawCommon(ctx, hours, minutes, nowseconds, 0.75);
+				drawCommon(ctx, hours, minutes, nowseconds, 150, 112, 90, 67);
 			} else if (attrs.size == 'sm') {
 				//background and style small
 				ctx.shadowBlur = 2;
 				ctx.fillStyle = '#FFFFFF';
 				ctx.fillRect(0, 0, 400, 400);
 				
-				drawCommon(ctx, hours, minutes, nowseconds, 1);
+				drawCommon(ctx, hours, minutes, nowseconds, 200, 150, 120, 90);
 			} else {
 				//background and style large
 				ctx.shadowBlur = 2;
@@ -81,7 +81,7 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 				ctx.strokeStyle = '#FFCC00';
 				ctx.stroke();
 
-				drawCommon(ctx, hours, minutes, nowseconds, 1);
+				drawCommon(ctx, hours, minutes, nowseconds, 200, 150, 120, 90);
 
 				//alarm1
 				ctx.lineWidth = 10;
@@ -162,10 +162,10 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 			}
 		}
 		
-		function drawCommon(ctx, hours, minutes, nowseconds, scale) {
+		function drawCommon(ctx, hours, minutes, nowseconds, center, hoursize, minsize, secsize) {
 			ctx.shadowColor = '#73b92d';
 			ctx.beginPath();
-			ctx.arc(200 * scale, 200 * scale, 150 * scale, 0 , 2 * Math.PI);
+			ctx.arc(center, center, hoursize, 0 , 2 * Math.PI);
 			ctx.fillStyle = "#99D75B";
 			ctx.fill();
 			ctx.lineWidth = 1;
@@ -179,17 +179,17 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 
 			//hours
 			ctx.beginPath();
-			ctx.arc(200 * scale, 200 * scale, 150 * scale, -0.5*Math.PI, (hours*Math.PI)/12-0.5*Math.PI);
+			ctx.arc(center, center, hoursize, -0.5*Math.PI, (hours*Math.PI)/12-0.5*Math.PI);
 			ctx.stroke();
 
 			//minutes
 			ctx.beginPath();
-			ctx.arc(200 * scale, 200 * scale, 120 * scale, -0.5*Math.PI, (minutes*Math.PI)/30-0.5*Math.PI);
+			ctx.arc(center, center, minsize, -0.5*Math.PI, (minutes*Math.PI)/30-0.5*Math.PI);
 			ctx.stroke();
 
 			//seconds
 			ctx.beginPath();
-			ctx.arc(200 * scale, 200 * scale, 90 * scale, -0.5*Math.PI, (nowseconds*Math.PI)/30-0.5*Math.PI);
+			ctx.arc(center, center, secsize, -0.5*Math.PI, (nowseconds*Math.PI)/30-0.5*Math.PI);
 			ctx.stroke();
 		}
 
