@@ -51,12 +51,12 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 				//ctx.fillStyle = gradient;
 				//ctx.fillRect(0, 0, 400, 400);
 				ctx.fillStyle = '#FFFFFF';
-				ctx.fillRect(0, 0, 950, 400);
+				ctx.fillRect(0, 0, 400, 400);
 				
 				ctx.strokeStyle = '#99D75B';
 				ctx.stroke();
 				ctx.beginPath();
-				ctx.arc(475, 200, 200, 0 , 2 * Math.PI);
+				ctx.arc(200, 200, 200, 0 , 2 * Math.PI);
 				
 				drawCommon(ctx, hours, minutes, nowseconds);
 			} else {
@@ -70,7 +70,7 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 				
 				ctx.strokeStyle = '#99D75B';
 				ctx.beginPath();
-				ctx.arc(475, 200, 200, 0 , 2 * Math.PI);
+				ctx.arc(200, 200, 200, 0 , 2 * Math.PI);
 				ctx.stroke();
 
 				gradientred = ctx.createRadialGradient(835, 165, 5, 835, 165, 55);
