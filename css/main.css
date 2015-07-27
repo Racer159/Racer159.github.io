@@ -25,12 +25,20 @@ body {
 
 /* HOVER */
 .hover:hover {
-	background-color: #DDEEFF;
+	background-color: #c1e79c;
 }
 
 /* SPACING */
 .panel img {
 	padding: 15px 0px 15px 0px;
+}
+
+.panel {
+	border-radius: 0px;
+}
+
+.well {
+	border-radius: 0px;
 }
 
 .page {

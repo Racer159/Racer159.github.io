@@ -162,7 +162,7 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 			ctx.fillStyle = "#99D75B";
 			ctx.fill();
 			ctx.lineWidth = 1;
-			ctx.strokeStyle = '#73b92d';
+			ctx.strokeStyle = '#99D75B';
 			ctx.stroke();
 			
 			ctx.strokeStyle = '#4d7b1e';

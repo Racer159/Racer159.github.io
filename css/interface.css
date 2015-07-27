@@ -14,6 +14,7 @@ select {
     appearance:none;
     cursor:pointer;
 }
+
 /* SELECT */
 select.one {
 	-webkit-box-shadow: 0 3px 0 #FF0000, 0 -1px #fff inset;
@@ -31,4 +32,9 @@ select.three {
 	-webkit-box-shadow: 0 3px 0 #00FF00, 0 -1px #fff inset;
     -moz-box-shadow: 0 3px 0 #00FF00, 0 -1px #fff inset;
     box-shadow: 0 3px 0 #00FF00, 0 -1px #fff inset;
+}
+
+/* BUTTONS */
+.btn {
+	border-radius: 0px;
 }
