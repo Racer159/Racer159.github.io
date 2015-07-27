@@ -1,7 +1,7 @@
 <div id="clock">
 	<canvas id="canvas-sm" width="400" height="400"></canvas>
 	<div id='alarm-sm'>
-		<span style="font-size:15px">Alarm 1</span>
+		<label style="font-size:15px;padding-right:10px">Alarm 1</label>
 		<label>
 			<select id="hour1" ng-model="aonehour" class="one" ng-options="hour for hour in hours"></select>
 		</label>
@@ -17,7 +17,9 @@
 			<select id="onoff1" ng-model="aoneon" class="one" ng-options="of for of in onoffs"></select>
 		</label>
 		
-		<span style="font-size:15px">Alarm 2</span>
+		<br><br>
+		
+		<label style="font-size:15px;padding-right:10px">Alarm 2</label>
 		<label>
 			<select id="hour2" ng-model="atwohour"  class="two" ng-options="hour for hour in hours"></select>
 		</label>
