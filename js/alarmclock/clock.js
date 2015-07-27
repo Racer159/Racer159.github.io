@@ -69,9 +69,9 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 				ctx.fillRect(0, 0, 950, 400);
 				
 				ctx.strokeStyle = '#99D75B';
-				ctx.stroke();
 				ctx.beginPath();
 				ctx.arc(475, 200, 200, 0 , 2 * Math.PI);
+				ctx.stroke();
 
 				gradientred = ctx.createRadialGradient(835, 165, 5, 835, 165, 55);
 				gradientred.addColorStop(0, '#FFCCCC');
