@@ -1,8 +1,8 @@
 <div id="clock">
 	<canvas id="canvas-sm" width="400" height="400"></canvas>
 	<div id='alarm-sm'>
-		<h3 style="float:left;">Alarm 1</h3>
-		<span style="float:right;">
+		<span>
+			<h3>Alarm 1</h3>
 			<label>
 				<select id="hour1" ng-model="aonehour" class="one" ng-options="hour for hour in hours"></select>
 			</label>
@@ -19,8 +19,9 @@
 			</label>
 		</span>
 		
-		<h3 style="float:left;">Alarm 2</h3>
-		<span style="float:right;">
+		
+		<span>
+			<h3>Alarm 2</h3>
 			<label>
 				<select id="hour2" ng-model="atwohour"  class="two" ng-options="hour for hour in hours"></select>
 			</label>
