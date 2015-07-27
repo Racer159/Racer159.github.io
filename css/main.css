@@ -1,3 +1,4 @@
+/* GENERAL */
 body {
 	font-family: "Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
@@ -34,4 +35,11 @@ body {
 
 .page {
 	padding-bottom: 20px;
+}
+
+/* HEADER */
+.shandow {
+	width: 100%;
+	height: 5px;
+	background-color: lime;
 }
