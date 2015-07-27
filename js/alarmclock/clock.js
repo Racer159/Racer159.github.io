@@ -49,7 +49,7 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 				ctx.fillStyle = '#FFFFFF';
 				ctx.fillRect(0, 0, 400, 400);
 				
-				ctx.shadowBlur = 1;
+				ctx.shadowBlur = 2;
 				ctx.shadowColor = '#73b92d';
 				ctx.arc(200, 200, 150, 0 , 2 * Math.PI);
 				ctx.fillStyle = "#99D75B";
@@ -62,23 +62,21 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 				ctx.fillStyle = '#FFFFFF';
 				ctx.fillRect(0, 0, 950, 400);
 				
-				ctx.shadowBlur = 1;
+				ctx.shadowBlur = 2;
 				ctx.shadowColor = '#73b92d';
 				ctx.arc(200, 200, 150, 0 , 2 * Math.PI);
 				ctx.fillStyle = "#99D75B";
 				ctx.fill();
-
-				gradientred = ctx.createRadialGradient(835, 165, 5, 835, 165, 55);
-				gradientred.addColorStop(0, '#FFCCCC');
-				gradientred.addColorStop(1, '#FFFFFF');
-				ctx.fillStyle = gradientred;
-				ctx.fillRect(785, 115, 110, 110);
-
-				gradientyel = ctx.createRadialGradient(835, 300, 5, 835, 300, 55);
-				gradientyel.addColorStop(0, '#FFFFCC');
-				gradientyel.addColorStop(1, '#FFFFFF');
-				ctx.fillStyle = gradientyel;
-				ctx.fillRect(785, 250, 110, 110);
+				
+				ctx.shadowColor = '#73b92d';
+				ctx.arc(200, 200, 150, 0 , 2 * Math.PI);
+				ctx.fillStyle = "#FFCCCC";
+				ctx.fill();
+				
+				ctx.shadowColor = '#73b92d';
+				ctx.arc(200, 200, 150, 0 , 2 * Math.PI);
+				ctx.fillStyle = "#FFFFCC";
+				ctx.fill();
 
 				drawCommon(ctx, hours, minutes, nowseconds);
 
@@ -166,7 +164,7 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 			ctx.shadowColor = '#335214';
 			ctx.lineWidth = 14;
 			ctx.lineCap = 'round';
-			ctx.shadowBlur = 1;
+			ctx.shadowBlur = 2;
 
 			//hours
 			ctx.beginPath();
