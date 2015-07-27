@@ -53,7 +53,7 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 				ctx.arc(200, 200, 150, 0 , 2 * Math.PI);
 				ctx.fillStyle = "#99D75B";
 				ctx.fill();
-				ctx.lineWidth = 2;
+				ctx.lineWidth = 1;
 				ctx.strokeStyle = '#73b92d';
 				ctx.stroke();
 				
@@ -68,28 +68,32 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 				ctx.arc(200, 200, 150, 0 , 2 * Math.PI);
 				ctx.fillStyle = "#99D75B";
 				ctx.fill();
-				ctx.lineWidth = 2;
+				ctx.lineWidth = 1;
 				ctx.strokeStyle = '#73b92d';
 				ctx.stroke();
-
-				gradientred = ctx.createRadialGradient(835, 165, 5, 835, 165, 55);
-				gradientred.addColorStop(0, '#FFCCCC');
-				gradientred.addColorStop(1, '#FFFFFF');
-				ctx.fillStyle = gradientred;
-				ctx.fillRect(785, 115, 110, 110);
-
-				gradientyel = ctx.createRadialGradient(835, 300, 5, 835, 300, 55);
-				gradientyel.addColorStop(0, '#FFFFCC');
-				gradientyel.addColorStop(1, '#FFFFFF');
-				ctx.fillStyle = gradientyel;
-				ctx.fillRect(785, 250, 110, 110);
+				
+				ctx.beginPath();
+				ctx.arc(840, 170, 50, 0 , 2 * Math.PI);
+				ctx.fillStyle = "#FF0000";
+				ctx.fill();
+				ctx.lineWidth = 1;
+				ctx.strokeStyle = '#CC0000';
+				ctx.stroke();
+				
+				ctx.beginPath();
+				ctx.arc(840, 305, 50, 0 , 2 * Math.PI);
+				ctx.fillStyle = "#FFCC00";
+				ctx.fill();
+				ctx.lineWidth = 1;
+				ctx.strokeStyle = '#CCA300';
+				ctx.stroke();
 
 				drawCommon(ctx, hours, minutes, nowseconds);
 
 				//alarm1
 				ctx.lineWidth = 10;
-				ctx.strokeStyle = '#FF0000';
-				ctx.shadowColor = '#FF0000';
+				ctx.strokeStyle = '#B30000';
+				ctx.shadowColor = '#800000';
 				ctx.beginPath();
 				if (scope.aoneampm == "AM") {
 					ctx.arc(840, 170, 50, -0.5*Math.PI, (scope.aonehour*Math.PI)/12-0.5*Math.PI);
@@ -102,8 +106,8 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 				ctx.stroke();
 
 				//alarm2
-				ctx.strokeStyle = '#FFCC00';
-				ctx.shadowColor = '#FFCC00';
+				ctx.strokeStyle = '#B38F00';
+				ctx.shadowColor = '#806600';
 				ctx.beginPath();
 				if (scope.atwoampm == "AM") {
 					ctx.arc(840, 305, 50, -0.5*Math.PI, (scope.atwohour*Math.PI)/12-0.5*Math.PI);
