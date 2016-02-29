@@ -24,6 +24,13 @@ app.controller('AppController', function($scope, $log, $location, $window) {
 		$location.path('/projects');
 	};
 	
+	$scope.activateNet = function(e) {
+		if (!e) e = window.event;
+		if (e.shiftKey && e.ctrlKey) {
+			alert("You've stumbled on something interesting! More to come.");
+		}
+	}
+	
 	$scope.$on("$locationChangeSuccess", function(event){
     	$scope.home = '';
 		$scope.resume = '';
