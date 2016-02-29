@@ -28,9 +28,13 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 		templateUrl: 'partials/resume.html',
 		controller: 'ResumeController'
 	}).state('projects', {
+		abstract: true,
 		url: '/projects',
 		templateUrl: 'partials/projects.html',
 		controller: 'ProjectsController'
+	}).state('projects.overview', {
+		url: '/overview',
+		templateUrl: 'partials/projects/overview.html',
 	}).state('projects.template', {
 		url: '/template',
 		templateUrl: 'partials/projects/template.html',
