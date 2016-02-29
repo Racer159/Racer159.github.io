@@ -1,4 +1,4 @@
-var app = angular.module('main', ['ngRoute', 'ngAnimate', 'ui.bootstrap']);
+var app = angular.module('main', ['ui.router', 'ngAnimate', 'ui.bootstrap']);
 
 app.controller('AppController', function($scope, $log, $location, $window) {
 	$scope.home = 'active';
