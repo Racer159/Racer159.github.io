@@ -1,7 +1,7 @@
 var app = angular.module('main');
 
-app.controller('ProjectsController', function($scope, $location, $log) {
+app.controller('ProjectsController', function($scope, $state, $log) {
 	$scope.gotoProject = function(project) {
-		$location.path('/projects/' + project);
+		$state.go('.' + project);
 	};
 });
