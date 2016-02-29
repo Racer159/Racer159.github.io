@@ -16,6 +16,7 @@ app.controller('AppController', function($scope, $log, $location, $window) {
 	}
 	
 	$scope.$on("$locationChangeSuccess", function(event){
+		$scope.isCollapsed = true;
     	$scope.home = '';
 		$scope.resume = '';
 		$scope.projects = '';
