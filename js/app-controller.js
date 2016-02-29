@@ -8,22 +8,6 @@ app.controller('AppController', function($scope, $log, $location, $window) {
 		$window.ga('send', 'pageview', { page: $location.path() });
 	});
 	
-	$scope.gotoGitHub = function() {
-		$window.location.href = 'https://github.com/Racer159';
-	};
-	
-	$scope.gotoHome = function() {
-		$location.path('/home');
-	};
-	
-	$scope.gotoResume = function() {
-		$location.path('/resume');
-	};
-	
-	$scope.gotoProjects = function() {
-		$location.path('/projects');
-	};
-	
 	$scope.activateNet = function(e) {
 		if (!e) e = window.event;
 		if (e.shiftKey && e.ctrlKey) {
