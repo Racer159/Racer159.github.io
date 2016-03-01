@@ -11,11 +11,11 @@ app.controller('AppController', function($scope, $log, $location, $window) {
 	$scope.activateNet = function(e) {
 		if (!e) e = window.event;
 		if (e.shiftKey && e.ctrlKey) {
-			alert("You've stumbled on something interesting! More to come.");
+			window.location = 'http://racer159.github.io/partials/net/code1.html';
 		}
 	}
 	
-	$scope.$on("$locationChangeSuccess", function(event){
+	$scope.$on('$locationChangeSuccess', function(event){
 		$scope.isCollapsed = true;
     	$scope.home = '';
 		$scope.resume = '';
