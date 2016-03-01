@@ -1,14 +1,5 @@
 <html>
 <head>
-<script type="text/JavaScript">
-<!--
-var navigate = funtion(e) {
-	if(e.keyCode == 13){
-		alert('you have pressed enter');
-	}
-}
--->
-</script>
 <link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap.min.css"/>
 </head>
 <body style="background-color:#9CA3AE;">
@@ -31,12 +22,25 @@ var navigate = funtion(e) {
 		<div class="col-xs-12 text-center" style="margin: 50px 0;">
 			<h3>
 				<em><b>Please Enter Your Password:</b></em><br>
-				<b><input type="text" style="width:400px;" on-keydown="navigate()"/></b>
+				<b><input id="password" type="text" style="width:400px;"/></b>
 			</h3>
 		</div>
 		<div class="col-xs-12 text-center" style="margin-top: 50px;">
 			<h4>Protected by <b>GateKeeper&#8482;</b> Software</h4>
 		</div>
 	</div>
+	
+<script type="text/javascript">
+
+document.getElementById("password").addEventListener("keydown", function(e) {
+    if (!e) { var e = window.event; }
+
+    // Enter is pressed
+    if (e.keyCode == 13) { 
+		alert('Incorrect Password');
+	}
+}, false);
+
+</script>
 </body>
-<html>
+</html>
