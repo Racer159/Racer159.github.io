@@ -2,7 +2,7 @@
 <head>
 <script type="text/JavaScript">
 <!--
-setTimeout("location.href = 'http://racer159.github.io/partials/net/characters1.html';", 300);
+setTimeout("location.href = 'http://racer159.github.io/partials/net/characters3.html';", 300);
 -->
 </script>
 <style type="text/css">
@@ -51,7 +51,7 @@ h1, h2, p {
 
 html, body ,a{
 	background:#000000;
-	color:#00FF00;
+	color:#FF0000;
 	font-family:monospace;
 	height: 100%;
 	text-decoration:  none;
@@ -79,6 +79,44 @@ html, body ,a{
 </head>
 <body>
 <div class="outer" id="console">
+<br><br><br><br>
+EXPORT_SYMBOL(groups_alloc);
+<br><br><br><br>
+void&nbsp;groups_free(struct&nbsp;group_info&nbsp;*group_info)
+<br><br>
+{
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(group_info-&gt;blocks[0]&nbsp;!=&nbsp;group_info-&gt;small_block)&nbsp;{
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;i;
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;group_info-&gt;nblocks;&nbsp;i++)
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;free_page((unsigned&nbsp;long)group_info-&gt;blocks[i]);
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;}
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;kfree(group_info);
+<br><br>
+}
+<br><br><br><br>
+EXPORT_SYMBOL(groups_free);
+<br><br><br><br>
+/*&nbsp;export&nbsp;the&nbsp;group_info&nbsp;to&nbsp;a&nbsp;user-space&nbsp;array&nbsp;*/
+<br><br>
+static&nbsp;int&nbsp;groups_to_user(gid_t&nbsp;__user&nbsp;*grouplist,
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;struct&nbsp;group_info&nbsp;*group_info)
+<br><br>
+{
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;i;
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;unsigned&nbsp;int&nbsp;count&nbsp;=&nbsp;group_info-&gt;ngroups;
+<br><br><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;group_info-&gt;nblocks;&nbsp;i++)&nbsp;{
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unsigned&nbsp;int&nbsp;cp_count&nbsp;=&nbsp;min(NGROUPS_PER_BLO|</div>
 <br><br><br>
 struct&nbsp;group_info&nbsp;init_groups&nbsp;=&nbsp;{&nbsp;.usage&nbsp;=&nbsp;ATOMIC_INIT(2)&nbsp;};
 <br><br>
@@ -145,44 +183,6 @@ out_undo_partial_alloc:
 &nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;NULL;
 <br><br>
 }
-<br><br><br><br>
-EXPORT_SYMBOL(groups_alloc);
-<br><br><br><br>
-void&nbsp;groups_free(struct&nbsp;group_info&nbsp;*group_info)
-<br><br>
-{
-<br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(group_info-&gt;blocks[0]&nbsp;!=&nbsp;group_info-&gt;small_block)&nbsp;{
-<br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;i;
-<br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;group_info-&gt;nblocks;&nbsp;i++)
-<br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;free_page((unsigned&nbsp;long)group_info-&gt;blocks[i]);
-<br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;}
-<br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;kfree(group_info);
-<br><br>
-}
-<br><br><br><br>
-EXPORT_SYMBOL(groups_free);
-<br><br><br><br>
-/*&nbsp;export&nbsp;the&nbsp;group_info&nbsp;to&nbsp;a&nbsp;user-space&nbsp;array&nbsp;*/
-<br><br>
-static&nbsp;int&nbsp;groups_to_user(gid_t&nbsp;__user&nbsp;*grouplist,
-<br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;struct&nbsp;group_info&nbsp;*group_info)
-<br><br>
-{
-<br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;i;
-<br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;unsigned&nbsp;int&nbsp;count&nbsp;=&nbsp;group_info-&gt;ngroups;
-<br><br><br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;group_info-&gt;nblocks;&nbsp;i++)&nbsp;{
-<br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unsigned&nbsp;int&nbsp;cp_count&nbsp;=&nbsp;min(NGROUPS_PER_BLO|</div>
 <div class="footer" id="menu">
 <table width="50%">
      

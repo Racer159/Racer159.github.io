@@ -2,7 +2,7 @@
 <head>
 <script type="text/JavaScript">
 <!--
-setTimeout("location.href = 'http://racer159.github.io/partials/net/characters1.html';", 300);
+setTimeout("location.href = 'http://racer159.github.io/partials/net/houston.html';", 300);
 -->
 </script>
 <style type="text/css">
@@ -51,7 +51,7 @@ h1, h2, p {
 
 html, body ,a{
 	background:#000000;
-	color:#00FF00;
+	color:#0000FF;
 	font-family:monospace;
 	height: 100%;
 	text-decoration:  none;
@@ -79,24 +79,6 @@ html, body ,a{
 </head>
 <body>
 <div class="outer" id="console">
-<br><br><br>
-struct&nbsp;group_info&nbsp;init_groups&nbsp;=&nbsp;{&nbsp;.usage&nbsp;=&nbsp;ATOMIC_INIT(2)&nbsp;};
-<br><br>
-struct&nbsp;group_info&nbsp;*groups_alloc(int&nbsp;gidsetsize){
-<br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;struct&nbsp;group_info&nbsp;*group_info;
-<br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;nblocks;
-<br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;i;
-<br><br><br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;nblocks&nbsp;=&nbsp;(gidsetsize&nbsp;+&nbsp;NGROUPS_PER_BLOCK&nbsp;-&nbsp;1)&nbsp;/&nbsp;NGROUPS_PER_BLOCK;
-<br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;/*&nbsp;Make&nbsp;sure&nbsp;we&nbsp;always&nbsp;allocate&nbsp;at&nbsp;least&nbsp;one&nbsp;indirect&nbsp;block&nbsp;pointer&nbsp;*/
-<br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;nblocks&nbsp;=&nbsp;nblocks&nbsp;?&nbsp;:&nbsp;1;
-<br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;group_info&nbsp;=&nbsp;kmalloc(sizeof(*group_info)&nbsp;+&nbsp;nblocks*sizeof(gid_t&nbsp;*),&nbsp;GFP_USER);
 <br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!group_info)
 <br><br>
@@ -145,6 +127,24 @@ out_undo_partial_alloc:
 &nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;NULL;
 <br><br>
 }
+<br><br><br>
+struct&nbsp;group_info&nbsp;init_groups&nbsp;=&nbsp;{&nbsp;.usage&nbsp;=&nbsp;ATOMIC_INIT(2)&nbsp;};
+<br><br>
+struct&nbsp;group_info&nbsp;*groups_alloc(int&nbsp;gidsetsize){
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;struct&nbsp;group_info&nbsp;*group_info;
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;nblocks;
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;i;
+<br><br><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;nblocks&nbsp;=&nbsp;(gidsetsize&nbsp;+&nbsp;NGROUPS_PER_BLOCK&nbsp;-&nbsp;1)&nbsp;/&nbsp;NGROUPS_PER_BLOCK;
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;/*&nbsp;Make&nbsp;sure&nbsp;we&nbsp;always&nbsp;allocate&nbsp;at&nbsp;least&nbsp;one&nbsp;indirect&nbsp;block&nbsp;pointer&nbsp;*/
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;nblocks&nbsp;=&nbsp;nblocks&nbsp;?&nbsp;:&nbsp;1;
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;group_info&nbsp;=&nbsp;kmalloc(sizeof(*group_info)&nbsp;+&nbsp;nblocks*sizeof(gid_t&nbsp;*),&nbsp;GFP_USER);
 <br><br><br><br>
 EXPORT_SYMBOL(groups_alloc);
 <br><br><br><br>
