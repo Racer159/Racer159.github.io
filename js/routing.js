@@ -4,20 +4,6 @@ var app = angular.module('main');
 app.config(function ($stateProvider, $urlRouterProvider) {
 	// DEFAULT ROUTE
 	$urlRouterProvider.otherwise("/home");
-  
-  $stateProvider
-    .state('state1', {
-      url: "/state1",
-      templateUrl: "partials/state1.html"
-    })
-    .state('state1.list', {
-      url: "/list",
-      templateUrl: "partials/state1.list.html",
-      controller: function($scope) {
-        $scope.items = ["A", "List", "Of", "Items"];
-      }
-    })
-
 	
 	$stateProvider.state('home', {
 		url: '/home',
