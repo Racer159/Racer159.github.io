@@ -42,24 +42,6 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 				ctx.shadowBlur = 2;
 				ctx.fillStyle = '#005DA3';
 				ctx.fillRect(0, 0, 950, 400);
-				
-				ctx.shadowColor = '#CC0000';
-				ctx.beginPath();
-				ctx.arc(840, 170, 50, 0 , 2 * Math.PI);
-				ctx.fillStyle = "#FF0000";
-				ctx.fill();
-				ctx.lineWidth = 1;
-				ctx.strokeStyle = '#FF0000';
-				ctx.stroke();
-				
-				ctx.shadowColor = '#CCA300';
-				ctx.beginPath();
-				ctx.arc(840, 305, 50, 0 , 2 * Math.PI);
-				ctx.fillStyle = "#FFCC00";
-				ctx.fill();
-				ctx.lineWidth = 1;
-				ctx.strokeStyle = '#FFCC00';
-				ctx.stroke();
 
 				drawCommon(ctx, hours, minutes, nowseconds, 200, 150, 120, 90);
 
@@ -68,12 +50,12 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 				ctx.shadowColor = '#D9D9D9';
 				ctx.font = "54px Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif";
 				ctx.fillStyle = '#FFFFFF';
-				ctx.fillText(today, 410, 120);
+				ctx.fillText(today, 410, 180);
 
 				//time
 				ctx.font = "42px Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif";
 				ctx.fillStyle = '#FFFFFF';
-				ctx.fillText(time, 410, 170);
+				ctx.fillText(time, 410, 230);
 			}
 		}
 		
