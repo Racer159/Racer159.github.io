@@ -28,15 +28,12 @@ html, body {
 .hover:hover {
 	background-color: #005DA3;
 	color: white;
-}
-
-/* SPACING */
-.panel img {
-	padding: 15px 0px 15px 0px;
+	cursor: pointer;
 }
 
 .panel {
 	border-radius: 0px;
+	padding: 0px;
 }
 
 .well {
