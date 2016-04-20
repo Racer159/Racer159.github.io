@@ -26,7 +26,8 @@ html, body {
 
 /* HOVER */
 .hover:hover {
-	background-color: #007ad6;
+	background-color: #005DA3;
+	color: white;
 }
 
 /* SPACING */
