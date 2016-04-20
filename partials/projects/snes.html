@@ -1,25 +1,23 @@
-<div class="col-md-12 page">
-	<div class="page-header">
-		<h2>Bluetooth SNES Controller</h2>
-	</div>
-	<div>
-		<p>
-			This project just had the simple goal of creating a Bluetooth SNES controller, similar to the one on the Adafruit Learning 
-			System.  I chose this project because I wanted to learn more about the hardware side of things, and this was a good way 
-			to get my feet wet.  I didn't just follow the directions though, as I wanted a sleeker look then the Adafruit controller (they 
-			used an external charger), so there were some spacing challenges I had to overcome, and I had to get creative with the snips
-			in a few areas of the controller.  Overall I ended up with a clean looking SNES controller, just without the cable.
-		</p>
-	</div>
-	<div class="well" ng-init="slides = [{image: 'images/projects/snes/main.jpg', text: 'The Workstation'}];
-			intervalMs = 5000;">
-		<carousel interval="intervalMs">
-			<slide ng-repeat="slide in slides" active="slide.active">
-			<img ng-src="{{slide.image}}" style="margin:auto;">
-				<div class="carousel-caption">
-					<p>{{slide.text}}</p>
-				</div>
-			</slide>
-		</carousel>
-	</div>
+<div class="page-header">
+	<h2>Bluetooth SNES Controller</h2>
+</div>
+<div>
+	<p>
+		This project just had the simple goal of creating a Bluetooth SNES controller, similar to the one on the Adafruit Learning 
+		System.  I chose this project because I wanted to learn more about the hardware side of things, and this was a good way 
+		to get my feet wet.  I didn't just follow the directions though, as I wanted a sleeker look then the Adafruit controller (they 
+		used an external charger), so there were some spacing challenges I had to overcome, and I had to get creative with the snips
+		in a few areas of the controller.  Overall I ended up with a clean looking SNES controller, just without the cable.
+	</p>
+</div>
+<div class="well" ng-init="slides = [{image: 'images/projects/snes/main.jpg', text: 'The Workstation'}];
+		intervalMs = 5000;">
+	<carousel interval="intervalMs">
+		<slide ng-repeat="slide in slides" active="slide.active">
+		<img ng-src="{{slide.image}}" style="margin:auto;">
+			<div class="carousel-caption">
+				<p>{{slide.text}}</p>
+			</div>
+		</slide>
+	</carousel>
 </div>
