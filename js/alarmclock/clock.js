@@ -46,21 +46,21 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 			if (attrs.size == 'xs') {
 				//background and style small
 				ctx.shadowBlur = 2;
-				ctx.fillStyle = '#FFFFFF';
+				ctx.fillStyle = '#005DA3';
 				ctx.fillRect(0, 0, 300, 300);
 				
 				drawCommon(ctx, hours, minutes, nowseconds, 150, 112, 90, 67);
 			} else if (attrs.size == 'sm') {
 				//background and style small
 				ctx.shadowBlur = 2;
-				ctx.fillStyle = '#FFFFFF';
+				ctx.fillStyle = '#005DA3';
 				ctx.fillRect(0, 0, 400, 400);
 				
 				drawCommon(ctx, hours, minutes, nowseconds, 200, 150, 120, 90);
 			} else {
 				//background and style large
 				ctx.shadowBlur = 2;
-				ctx.fillStyle = '#FFFFFF';
+				ctx.fillStyle = '#005DA3';
 				ctx.fillRect(0, 0, 950, 400);
 				
 				ctx.shadowColor = '#CC0000';
@@ -114,27 +114,27 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 
 				//draw the text
 				//date
-				ctx.shadowColor = '#BCBCBC';
+				ctx.shadowColor = '#D9D9D9';
 				ctx.font = "54px Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif";
-				ctx.fillStyle = '#121212';
+				ctx.fillStyle = '#FFFFFF';
 				ctx.fillText(today, 410, 70);
 
 				//time
 				ctx.font = "42px Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif";
-				ctx.fillStyle = '#121212';
+				ctx.fillStyle = '#FFFFFF';
 				ctx.fillText(time, 410, 120);
 
 				//alarms
 				ctx.font = "25px Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif";
-				ctx.fillStyle = '#121212';
+				ctx.fillStyle = '#FFFFFF';
 				ctx.fillText("Alarm", 410, 190);
 				ctx.fillText("Alarm", 410, 263);
 
 				ctx.font = "25px Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif";
-				ctx.fillStyle = '#FF0000';
+				ctx.fillStyle = '#D9D9D9';
 				ctx.fillText("1", 495, 190);
 
-				ctx.fillStyle = '#FFCC00';
+				ctx.fillStyle = '#D9D9D9';
 				ctx.fillText("2", 495, 263);
 			}
 			
@@ -163,17 +163,17 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 		}
 		
 		function drawCommon(ctx, hours, minutes, nowseconds, center, hoursize, minsize, secsize) {
-			ctx.shadowColor = '#73b92d';
+			ctx.shadowColor = '#D9D9D9';
 			ctx.beginPath();
 			ctx.arc(center, center, hoursize, 0 , 2 * Math.PI);
-			ctx.fillStyle = "#99D75B";
+			ctx.fillStyle = "#FFFFFF";
 			ctx.fill();
 			ctx.lineWidth = 1;
-			ctx.strokeStyle = '#99D75B';
+			ctx.strokeStyle = '#FFFFFF';
 			ctx.stroke();
 			
-			ctx.strokeStyle = '#4d7b1e';
-			ctx.shadowColor = '#335214';
+			ctx.strokeStyle = '#D9D9D9';
+			ctx.shadowColor = '#C0C0C0';
 			ctx.lineWidth = 14;
 			ctx.lineCap = 'round';
 
