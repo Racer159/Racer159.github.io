@@ -59,14 +59,14 @@ html, body {
 .wrapper {
   min-height: 100%;
   /* equal to footer height */
-  margin-bottom: -50px; 
+  margin-bottom: -70px; 
 }
 .wrapper:after {
   content: "";
   display: block;
 }
 .footer, .wrapper:after {
-  height: 50px; 
+  height: 70px;
 }
 .footer {
   background: #222;

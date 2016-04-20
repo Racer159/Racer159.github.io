@@ -50,12 +50,12 @@ app.directive('clock', ['$interval', '$compile', function($interval, $compile) {
 				ctx.shadowColor = '#D9D9D9';
 				ctx.font = "54px Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif";
 				ctx.fillStyle = '#FFFFFF';
-				ctx.fillText(today, 410, 180);
+				ctx.fillText(today, 410, 190);
 
 				//time
 				ctx.font = "42px Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif";
 				ctx.fillStyle = '#FFFFFF';
-				ctx.fillText(time, 410, 230);
+				ctx.fillText(time, 410, 240);
 			}
 		}
 		
