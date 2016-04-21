@@ -50,7 +50,7 @@ html, body {
 	height: 3px;
 	background-color: #005DA3;
 	margin-top: -20px;
-	box-shadow: 0px 5px 10px -2px #888;
+	box-shadow: 0px -5px 10px 7px #888;
 }
 
 /* FOOTER */
@@ -68,4 +68,5 @@ html, body {
 }
 .footer {
   background: #222;
+  box-shadow: 0px -2px 10px 1px #888;
 }
