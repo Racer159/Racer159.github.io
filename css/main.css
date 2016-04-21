@@ -50,6 +50,7 @@ html, body {
 	height: 3px;
 	background-color: #005DA3;
 	margin-top: -20px;
+	box-shadow: 0px 5px 10px -2px #888;
 }
 
 /* FOOTER */
