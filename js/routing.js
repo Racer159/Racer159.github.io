@@ -24,12 +24,12 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 	}).state('projects.template', {
 		url: '/template',
 		templateUrl: 'partials/projects/template.html',
-	}).state('projects.raspi', {
-		url: '/raspi',
-		templateUrl: 'partials/projects/raspi.html',
-	}).state('projects.snes', {
-		url: '/snes',
-		templateUrl: 'partials/projects/snes.html',
+	}).state('projects.kiwitv', {
+		url: '/kiwitv',
+		templateUrl: 'partials/projects/kiwitv.html',
+	}).state('projects.projectatlas', {
+		url: '/projectatlas',
+		templateUrl: 'partials/projects/projectatlas.html',
 	}).state('projects.tigercenter', {
 		url: '/tigercenter',
 		templateUrl: 'partials/projects/tigercenter.html',

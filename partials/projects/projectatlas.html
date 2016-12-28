@@ -1,0 +1,23 @@
+<div class="page-header">
+	<h2>Project Name</h2>
+</div>
+<div>
+	<p>
+	Project Atlas was a project I worked on while I was an intern at Microsoft along with other fellow interns.  The basic idea 
+	was to create a physical implementation of social media, and to see how far that implementation could travel.  To accomplish this, 
+	we placed Windows Phones with custom software running on them inside a laser-cut enclosure with speakers, lights, and a custom PCB
+	to drive everything off of the audio jack on the phone.  This came together to create what we dubbed an "Explorer."  We ran this 
+	experiment for a few months, and found that the Explorers travelled coast to coast, and some even migrated to Canada.  You can learn 
+	more <a href="https://web.archive.org/web/20160326140445/http://www.projectatlas.ms/">here</a>.
+	</p>
+</div>
+<div class="well" ng-init="slides = [{image: 'images/projects/projectatlas/main.png', text: 'The Intern Team'}, {image: 'images/projects/projectatlas/msbotsfinal.png', text: 'The Explorers'}]; intervalMs = 5000;">
+	<carousel interval="intervalMs">
+		<slide ng-repeat="slide in slides" active="slide.active">
+		<img ng-src="{{slide.image}}" style="margin:auto;">
+			<div class="carousel-caption">
+				<p>{{slide.text}}</p>
+			</div>
+		</slide>
+	</carousel>
+</div>

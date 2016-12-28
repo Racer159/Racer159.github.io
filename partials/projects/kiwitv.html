@@ -1,0 +1,20 @@
+<div class="page-header">
+	<h2>Project Name</h2>
+</div>
+<div>
+	<p>
+	Kiwi TV is an application written for the Universal Windows Platform that allows the user to watch live streaming television from a variety of sources. 
+	It features 25+ built-in channels along with Twitch.tv, and UStream integration to provide a wide range of channel options.  The app also takes advantage of 
+	the UWP platform, being available across PC, mobile, and Xbox.  You can learn more <a href="http://kiwi.racer159.com">here</a>.
+	</p>
+</div>
+<div class="well" ng-init="slides = [{image: 'images/projects/kiwitv/main.jpg', text: 'Main Screen'}, {image: 'images/projects/kiwitv/channel.jpg', text: 'Channel Add'}]; intervalMs = 5000;">
+	<carousel interval="intervalMs">
+		<slide ng-repeat="slide in slides" active="slide.active">
+		<img ng-src="{{slide.image}}" style="margin:auto;">
+			<div class="carousel-caption">
+				<p>{{slide.text}}</p>
+			</div>
+		</slide>
+	</carousel>
+</div>
