@@ -9,8 +9,8 @@ app.controller('AppController', function($scope, $log, $location, $window) {
 	});
 	
 	$scope.activateNet = function(e) {
-		if (!e) e = window.event;
-		if (e.shiftKey && e.ctrlKey) {
+		var evt = e || window.event;
+		if (evt.shiftKey && evt.ctrlKey) {
 			window.location = 'http://racer159.github.io/partials/net/code1.html';
 		}
 	}

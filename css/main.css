@@ -31,6 +31,12 @@ html, body {
 	cursor: pointer;
 }
 
+.hover:active {
+	background-color: #006cbd;
+	color: white;
+	cursor: pointer;
+}
+
 .panel {
 	border-radius: 0px;
 	padding: 0px;
@@ -51,6 +57,21 @@ html, body {
 	background-color: #005DA3;
 	margin-top: -20px;
 	box-shadow: 0px -6px 10px 7px #888;
+}
+
+/* CONTENT */
+
+.welcome {
+	text-align: center;
+}
+
+.welcome-title {
+	margin-bottom: 30px;
+}
+
+.border-image {
+	border: 10px solid black;
+	margin: 20px auto;
 }
 
 /* FOOTER */

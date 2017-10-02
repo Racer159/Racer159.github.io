@@ -8,15 +8,24 @@
 </div>
 <div class="col-xs-12">
 	<div class="container">
-		<div class="col-xs-12">
+		<div class="col-xs-12 welcome">
 			<br>
-			<h2>Welcome</h2>
-			<p>
-				Welcome to racer159.com! I am a 2016 graduate of the Software Engineering program at Rochester Institute of Technology and created this site to serve as a portfolio of some of my work.  
-				Above you can see a javascript canvas-based clock along with links to my resume, projects, and personal GitHub account.  This site was written using Angular.js to control the 
-				navigation and interactive elements, and Bootstrap to serve as a jumping off point for CSS styling.  If you have any questions about the site feel free to contact me via email at
-				<a href="racer159@outlook.com">racer159@outlook.com</a>.  Again, welcome, and thanks for taking a look.
-			</p>
+			<div class="welcome-title">
+				<h1><b>WELCOME TO RACER159.COM</b></h1>
+				<p><i>The Internet Home for Wayne Starr</i></p>
+			</div>
+			<div id="" class="col-md-4" ng-mousedown="playDTMF1($event)" oncontextmenu="return false">
+				<img id="image1" src="images/profile.png" class="img-responsive img-circle border-image hover" alt="black motorcycle and truck"/>
+			</div>
+			<div class="col-md-4" ng-mousedown="playDTMF2($event)" oncontextmenu="return false">
+				<img id="image2" src="images/profilebolt.png" class="img-responsive img-circle border-image hover" alt="black motorcycle doing a wheelie">
+			</div>
+			<div class="col-md-4" ng-mousedown="playDTMF3($event)" oncontextmenu="return false">
+				<img id="image3" src="images/profileblackjack.png" class="img-responsive img-circle border-image hover" alt="black truck kicking up dirt"/>
+			</div>
+			<audio id="dtmf-1"><source src="audio/dtmf_1.mp3" type="audio/mp3"/></audio>
+			<audio id="dtmf-2"><source src="audio/dtmf_2.mp3" type="audio/mp3"/></audio>
+			<audio id="dtmf-3"><source src="audio/dtmf_3.mp3" type="audio/mp3"/></audio>
 			<br>&nbsp;
 		</div>
 	</div>

@@ -15,6 +15,7 @@
 	<script type="text/javascript" src="js/angular/angular-animate.js"></script>
 	<script type="text/javascript" src="js/angular/angular-ui-router.js"></script>
 	<script type="text/javascript" src="js/bootstrap/ui-bootstrap-tpls-0.11.2.min.js"></script>
+	<script src="https://use.fontawesome.com/dbb5802f8a.js"></script> 
 	
 	<script type="text/javascript" src="js/app-controller.js"></script>
 	<script type="text/javascript" src="js/routing.js"></script>
@@ -45,15 +46,20 @@
 					<span class="fa fa-bars"></span>
 				</button>
 				<a class="navbar-brand" href="#">
-					<span style="float:right;margin-left:5px;">WS</span>
+					<span style="float:right;margin:-7px 5px;">
+						<img src="images/profile.png" class="img-responsive img-circle" alt="black motorcycle and truck" width="32"/>
+					</span>
 				</a>
 			</div>
 			<div class="collapse navbar-collapse" collapse="isCollapsed">
-				<ul class="nav navbar-nav">
+				<ul class="nav navbar-nav navbar-left">
 					<li ng-class="home"><a ui-sref="home">Home</a></li>
 					<li ng-class="projects"><a ui-sref="projects.overview">Projects</a></li>
 					<li ng-class="resume"><a ui-sref="resume">Resume</a></li>
-					<li ng-class="github"><a href="https://github.com/Racer159">GitHub</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li ng-class="linkedin"><a href="https://www.linkedin.com/in/wayne-starr-602557103"><i class="fa fa-linkedin fa-lg"></i></a></li>
+					<li ng-class="github"><a href="https://github.com/Racer159"><i class="fa fa-github fa-lg"></i></a></li>
 				</ul>
 			</div>
 		</div>
@@ -62,7 +68,7 @@
 	<div class="shadow"></div>
 	
 	<div class="container-fluid">
-		<div data-ui-view class="row"> </div>
+		<div data-ui-view class="row"></div>
 	</div>
 	</div>
 	
@@ -73,7 +79,7 @@
 				<a href="http://racer159.com/privacy.html">Privacy Policy</a>
 			</p>
 		</div>
-		<span class="text-muted" style="float:right;margin-top:10px;" ng-click="activateNet()">&pi;</span>
+		<span class="text-muted" style="float:right;margin-top:10px;" ng-mousedown="activateNet($event)" oncontextmenu="return false">&pi;</span>
     </div>
 </body>
 
