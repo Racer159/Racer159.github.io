@@ -38,9 +38,9 @@ app.controller('HomeController', function($scope, $log) {
 		console.log(angular.equals($scope.maryHadALittleLamb, $scope.currentPattern))
 		if (angular.equals($scope.maryHadALittleLamb, $scope.currentPattern)) {
 			console.log('here');
-			document.getElementById("image1").src = "images/sheep.png";
-			document.getElementById("image2").src = "images/sheep.png";
-			document.getElementById("image3").src = "images/sheep.png";
+			document.getElementById("image1").src = "images/unicorn.png";
+			document.getElementById("image2").src = "images/unicorn.png";
+			document.getElementById("image3").src = "images/unicorn.png";
 		}
 	}
 });
